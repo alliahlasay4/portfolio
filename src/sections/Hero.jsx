@@ -128,14 +128,14 @@ export default function Hero() {
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
             className="
-      relative
-      h-[420px]
-      md:h-[520px]
-      lg:h-[650px]
-      xl:h-[720px]
-      object-contain
-      drop-shadow-xl
-    "
+  relative
+  h-[320px]
+  md:h-[380px]
+  lg:h-[460px]
+  xl:h-[520px]
+  object-contain
+  drop-shadow-xl
+"
           />
 
           <div className="absolute bottom-6 w-[300px] md:w-[420px] h-[40px] bg-black/20 blur-2xl rounded-full"></div>
