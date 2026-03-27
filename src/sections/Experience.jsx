@@ -33,7 +33,7 @@ const card = {
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-28 bg-primary">
+    <section id="experience" className="py-16 md:py-20 bg-primary">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
 
         {/* TITLE ANIMATION */}

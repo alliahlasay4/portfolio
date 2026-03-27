@@ -14,4 +14,8 @@ export default {
     },
   },
   plugins: [],
+
+  screens: {
+    lg: '1024px'
+  }
 }

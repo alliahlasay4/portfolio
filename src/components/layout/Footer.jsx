@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope, FaPhone } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -20,34 +20,38 @@ export default function Footer() {
 
           {/* SOCIAL LINKS */}
           <div className="flex gap-6 text-xl">
-
             <a
               href="https://github.com/alliahlasay4"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-secondary transition"
+              className="text-white text-2xl hover:text-secondary hover:scale-110 transition"
             >
               <FaGithub />
             </a>
 
             <a
-              href="https://www.linkedin.com/"
+              href="https://www.linkedin.com/in/alliah-cassandra-lasay-28519326a/"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-secondary transition"
+              className="text-white text-2xl hover:text-secondary hover:scale-110 transition"
             >
               <FaLinkedin />
             </a>
 
             <a
               href="mailto:alliahlasay4@gmail.com"
-              className="hover:text-secondary transition"
+              className="text-white text-2xl hover:text-secondary hover:scale-110 transition"
             >
               <FaEnvelope />
             </a>
 
+            <a
+              href="tel:09286593680"
+              className="text-white text-2xl hover:text-secondary hover:scale-110 transition"
+            >
+              <FaPhone />
+            </a>
           </div>
-
         </div>
 
         {/* DIVIDER */}

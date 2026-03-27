@@ -4,32 +4,32 @@ export default function About() {
   return (
     <section
       id="about"
-      className="py-28 bg-white"
+      className="py-12 md:py-16 bg-white"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-10 grid md:grid-cols-2 gap-16 items-center">
 
         {/* LEFT CONTENT */}
-        <div className="space-y-8">
+        <div className="space-y-5">
 
           <h2 className="text-4xl md:text-5xl font-bold text-dark">
             About Me
           </h2>
 
-          <p className="text-dark text-lg leading-relaxed text-justify">
+          <p className="text-dark text-base md:text-lg leading-relaxed text-justify">
             I am a BS Information Technology student specializing in Web Development at
             De La Salle University – Dasmariñas. I focus on frontend development and enjoy
             building responsive, user-friendly interfaces using modern web technologies
             such as React, JavaScript, and Tailwind CSS.
           </p>
 
-          <p className="text-dark text-lg leading-relaxed text-justify">
+          <p className="text-dark text-base md:text-lg leading-relaxed text-justify">
             Currently, I work as a Frontend Developer Intern at Supsoft Tech where I translate
             Figma designs into functional React components and develop responsive interfaces
             for data-driven web applications. This experience has strengthened my skills in
             component-based development, UI implementation, and responsive design.
           </p>
 
-          <p className="text-dark text-lg leading-relaxed text-justify">
+          <p className="text-dark text-base md:text-lg leading-relaxed text-justify">
             I have also developed several academic and personal projects including management
             systems, administrative dashboards, and mobile applications. Through these projects,
             I gained experience integrating frontend interfaces with backend data and building
@@ -37,7 +37,7 @@ export default function About() {
           </p>
 
           {/* EXPERIENCE HIGHLIGHTS */}
-          <div className="flex flex-wrap gap-3 pt-2">
+          <div className="flex flex-wrap gap-3 pt-1">
 
             <Highlight text="Frontend Developer Intern" />
             <Highlight text="DOST Scholar" />
@@ -53,7 +53,7 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="grid grid-cols-2 sm:grid-cols-3 gap-5"
+          className="grid grid-cols-2 sm:grid-cols-3 gap-4"
         >
 
           <Skill name="React" />
@@ -95,7 +95,7 @@ function Skill({ name }) {
       bg-accent
       text-dark
       font-medium
-      px-4 py-4
+      px-3 py-3
       rounded-xl
       text-center
       shadow-md

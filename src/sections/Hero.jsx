@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope, FaPhone } from "react-icons/fa";
 import me from "../assets/me2.png";
 
 
@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen bg-primary flex items-center pt-24 overflow-hidden"
+      className="min-h-[80vh] md:min-h-screen bg-primary flex items-center pt-20 md:pt-24 pb-16 md:pb-24 overflow-hidden"
     >
       <div
         className="
@@ -25,13 +25,22 @@ export default function Hero() {
         {/* LEFT SIDE */}
         <div className="space-y-6 text-center lg:text-left">
 
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-dark text-lg md:text-xl text-dark/90 font-medium"
-          >
-            Hi, I'm Alliah!
-          </motion.p>
+        {/* MOBILE PROFILE IMAGE */}
+<div className="flex justify-center lg:hidden mb-4">
+  <img
+    src={me}
+    alt="Alliah"
+    className="h-32 w-32 object-cover rounded-full shadow-lg border-4 border-white"
+  />
+</div>
+
+<motion.p
+  initial={{ opacity: 0, y: 30 }}
+  animate={{ opacity: 1, y: 0 }}
+  className="text-dark text-lg md:text-xl text-dark/90 font-medium"
+>
+  Hi, I'm Alliah Cassandra Lasay!
+</motion.p>
 
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
@@ -111,6 +120,20 @@ export default function Hero() {
               <FaLinkedin />
             </a>
 
+            <a
+              href="mailto:alliahlasay4@gmail.com"
+              className="text-dark text-2xl hover:text-secondary hover:scale-110 transition"
+            >
+              <FaEnvelope />
+            </a>
+
+            <a
+              href="tel:09286593680"
+              className="text-dark text-2xl hover:text-secondary hover:scale-110 transition"
+            >
+              <FaPhone />
+            </a>
+
           </motion.div>
 
         </div>
@@ -120,7 +143,7 @@ export default function Hero() {
           initial={{ opacity: 0, x: 60 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.3 }}
-          className="flex justify-center lg:justify-end items-end h-full relative"
+          className="hidden lg:flex justify-center lg:justify-end items-end h-full relative"
         >
           <motion.img
             src={me}
@@ -129,10 +152,11 @@ export default function Hero() {
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
             className="
   relative
-  h-[320px]
-  md:h-[380px]
-  lg:h-[460px]
-  xl:h-[520px]
+  h-[210px]
+  sm:h-[260px]
+  md:h-[310px]
+  lg:h-[360px]
+  xl:h-[420px]
   object-contain
   drop-shadow-xl
 "

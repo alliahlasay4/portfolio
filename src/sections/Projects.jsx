@@ -14,14 +14,14 @@ export default function Projects() {
 
   const perPage = 3;
   const [page, setPage] = useState(0);
-  const [selectedProject, setSelectedProject] = useState(null);
+  const [selectedProjectIndex, setSelectedProjectIndex] = useState(null);
 
   const pageCount = Math.ceil(others.length / perPage);
   const paginatedProjects =
     others.slice(page * perPage, page * perPage + perPage);
 
   return (
-    <section id="projects" className="py-28 bg-white">
+<section id="projects" className="py-16 md:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
 
         <p className="text-secondary font-medium mb-2">
@@ -38,7 +38,7 @@ export default function Projects() {
               project={project}
               key={index}
               featured
-              onClick={() => setSelectedProject(project)}
+              onClick={() => setSelectedProjectIndex(projects.findIndex(p => p.title === project.title))}
             />
           ))}
         </div>
@@ -53,7 +53,7 @@ export default function Projects() {
             <ProjectCard
               project={project}
               key={index}
-              onClick={() => setSelectedProject(project)}
+              onClick={() => setSelectedProjectIndex(projects.findIndex(p => p.title === project.title))}
             />
           ))}
         </div>
@@ -83,10 +83,12 @@ export default function Projects() {
 
       </div>
 
-      {selectedProject && (
+      {selectedProjectIndex !== null && (
         <ProjectModal
-          project={selectedProject}
-          close={() => setSelectedProject(null)}
+          project={projects[selectedProjectIndex]}
+          close={() => setSelectedProjectIndex(null)}
+          onPrev={() => setSelectedProjectIndex((idx) => (idx - 1 + projects.length) % projects.length)}
+          onNext={() => setSelectedProjectIndex((idx) => (idx + 1) % projects.length)}
         />
       )}
     </section>
@@ -142,7 +144,7 @@ function ProjectCard({ project, featured, onClick }) {
   );
 }
 
-function ProjectModal({ project, close }) {
+function ProjectModal({ project, close, onPrev, onNext }) {
   const [zoomed, setZoomed] = useState(false);
 
   const [imageIndex, setImageIndex] = useState(0);
@@ -201,14 +203,15 @@ function ProjectModal({ project, close }) {
           </button>
 
           {/* CLICKABLE IMAGE */}
-          <div className="relative mb-6">
-
-            <img
-              src={project.images?.[imageIndex]}
-              alt={project.title}
-              onClick={() => setZoomed(true)}
-              className="max-w-full max-h-full rounded-lg shadow-2xl"
-            />
+          <div className="relative mb-6 flex justify-center">
+            <div className="w-full max-h-[60vh] overflow-hidden rounded-lg shadow-2xl">
+              <img
+                src={project.images?.[imageIndex]}
+                alt={project.title}
+                onClick={() => setZoomed(true)}
+                className="w-full h-full object-contain cursor-zoom-in"
+              />
+            </div>
 
             {project.images?.length > 1 && (
               <>
@@ -239,11 +242,34 @@ function ProjectModal({ project, close }) {
                 </button>
               </>
             )}
-
           </div>
-          <h2 className="text-2xl font-bold text-dark mb-3">
+
+          <div className="flex justify-between gap-3 mb-6">
+            <button
+              onClick={onPrev}
+              className="px-4 py-2 rounded-lg bg-secondary text-primary hover:opacity-90 transition"
+            >
+              Previous
+            </button>
+            <button
+              onClick={onNext}
+              className="px-4 py-2 rounded-lg bg-secondary text-primary hover:opacity-90 transition"
+            >
+              Next
+            </button>
+          </div>
+          <h2 className="text-2xl font-bold text-dark mb-2">
             {project.title}
           </h2>
+
+          <div className="mb-4 flex gap-2">
+            <span className="inline-block px-3 py-1 text-xs font-medium bg-secondary/20 text-secondary rounded-full">
+              {project.role}
+            </span>
+            <span className="inline-block px-3 py-1 text-xs font-medium bg-gray-200 text-dark rounded-full">
+              {project.date}
+            </span>
+          </div>
 
           <p className="text-dark mb-6">
             {project.description}
@@ -259,27 +285,7 @@ function ProjectModal({ project, close }) {
               </span>
             ))}
           </div>
-          <div className="flex gap-4">
-
-            <a
-              href={project.github}
-              target="_blank"
-              className="bg-secondary text-primary px-5 py-3 rounded-lg font-medium hover:opacity-90 transition"
-            >
-              View Code
-            </a>
-
-            {project.demo && (
-              <a
-                href={project.demo}
-                target="_blank"
-                className="border border-dark text-dark px-5 py-3 rounded-lg font-medium hover:bg-dark hover:text-white transition"
-              >
-                Live Demo
-              </a>
-            )}
-
-          </div>
+          <div className="mb-2" />
 
         </div>
       </div>
@@ -300,7 +306,7 @@ function ProjectModal({ project, close }) {
           <img
             src={project.images?.[imageIndex]}
             alt={project.title}
-            className="max-w-full max-h-full rounded-lg shadow-2xl"
+            className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
           />
         </div>
       )}

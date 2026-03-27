@@ -29,7 +29,7 @@ const card = {
 
 export default function Achievements() {
   return (
-    <section id="achievements" className="py-28 bg-white">
+    <section id="achievements" className="py-16 md:py-20 bg-white">
 
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
 
