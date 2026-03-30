@@ -1,8 +1,27 @@
 export const projects = [
   {
     title: "Blood Donation Management System",
-    description:
-      "Capstone project: a web-based system for managing donor records, scheduling blood drives, and generating reports. Includes structured data handling, form validation, and an admin dashboard to streamline operations.",
+
+    problem:
+      "Manual tracking of donor records led to inconsistent data and inefficient report generation.",
+
+    solution:
+      "Developed a web-based system with structured donor records, scheduling features, and automated reporting through an admin dashboard.",
+
+    features: [
+      "Donor record management",
+      "Blood drive scheduling system",
+      "Admin dashboard with report generation",
+      "Form validation and structured data handling"
+    ],
+
+    contributions: [
+      "Developed responsive UI using HTML, CSS, and Bootstrap",
+      "Implemented frontend logic with jQuery",
+      "Integrated UI with Laravel backend APIs",
+      "Designed dashboard layout and user flow"
+    ],
+
     role: "Frontend",
     date: "December 2025",
     tech: ["HTML", "CSS", "jQuery", "Bootstrap", "PHP", "Laravel", "MySQL"],
@@ -18,8 +37,26 @@ export const projects = [
 
   {
     title: "Intern Management System",
-    description:
-      "Frontend interface for an internship management platform, featuring dynamic UI components, role-based views, and responsive layouts for managing intern data and progress.",
+
+    problem:
+      "Tracking intern progress and records manually lacked organization and real-time visibility.",
+
+    solution:
+      "Built a responsive frontend interface with role-based views to manage intern data efficiently.",
+
+    features: [
+      "Role-based dashboard views",
+      "Dynamic UI components",
+      "Responsive layouts for multiple devices"
+    ],
+
+    contributions: [
+      "Developed UI using React",
+      "Translated Figma designs into reusable components",
+      "Managed component structure and state",
+      "Ensured responsive behavior across screen sizes"
+    ],
+
     role: "Frontend",
     date: "November 2025",
     tech: ["React", "JavaScript", "HTML", "CSS"],
@@ -35,8 +72,26 @@ export const projects = [
 
   {
     title: "Employee Management System",
-    description:
-      "Backend-focused system for handling employee records with CRUD operations and role-based access control. Designed database structure and logic for efficient data storage and retrieval.",
+
+    problem:
+      "Employee data management required a structured system for efficient storage, retrieval, and access control.",
+
+    solution:
+      "Designed and implemented a backend-focused system with CRUD operations and role-based access control.",
+
+    features: [
+      "CRUD operations for employee records",
+      "Role-based access control",
+      "Structured database design"
+    ],
+
+    contributions: [
+      "Designed MongoDB database schema",
+      "Implemented backend logic for data handling",
+      "Built API structure for CRUD operations",
+      "Ensured efficient data retrieval and storage"
+    ],
+
     role: "Backend",
     date: "October 2025",
     tech: ["HTML", "CSS", "JavaScript", "MongoDB"],
@@ -51,9 +106,27 @@ export const projects = [
 
   {
     title: "Loaning Mobile Application",
-    description:
-      "Android application for tracking loan records with authentication and data management features. Focused on building user interfaces and handling user input for financial tracking.",
-    role: "Mobile dev (front)",
+
+    problem:
+      "Tracking loan records manually made it difficult to monitor balances and repayment details.",
+
+    solution:
+      "Developed an Android application with authentication and data management features for tracking loans.",
+
+    features: [
+      "User authentication",
+      "Loan record tracking",
+      "Input handling for financial data"
+    ],
+
+    contributions: [
+      "Designed mobile UI layouts",
+      "Implemented input handling and validation",
+      "Developed data interaction logic using SQLite",
+      "Ensured smooth user experience"
+    ],
+
+    role: "Mobile Developer (Frontend)",
     date: "September 2025",
     tech: ["Java", "SQLite", "Android Studio"],
     github: "#",
@@ -68,8 +141,26 @@ export const projects = [
 
   {
     title: "To-Do List Web App",
-    description:
-      "Lightweight task management app with create, update, and delete functionality. Emphasizes clean UI, responsive design, and efficient DOM manipulation using vanilla JavaScript.",
+
+    problem:
+      "Basic task tracking tools lacked a simple and responsive interface for managing daily tasks.",
+
+    solution:
+      "Created a lightweight web application with full CRUD functionality and a clean, responsive UI.",
+
+    features: [
+      "Add, edit, and delete tasks",
+      "Responsive UI design",
+      "Efficient DOM manipulation"
+    ],
+
+    contributions: [
+      "Built UI using HTML and CSS",
+      "Implemented task logic using JavaScript",
+      "Handled DOM updates dynamically",
+      "Focused on clean and minimal user interface"
+    ],
+
     role: "Frontend",
     date: "August 2025",
     tech: ["HTML", "CSS", "JavaScript"],
@@ -83,8 +174,26 @@ export const projects = [
 
   {
     title: "Food Ordering Web App",
-    description:
-      "Fullstack-style web app with interactive menu browsing, cart management, and simulated checkout flow. Implements dynamic state handling and user interaction logic.",
+
+    problem:
+      "Users needed an interactive system to browse menus and manage orders efficiently.",
+
+    solution:
+      "Developed a web app with dynamic menu browsing, cart functionality, and simulated checkout flow.",
+
+    features: [
+      "Interactive menu browsing",
+      "Cart management system",
+      "Simulated checkout process"
+    ],
+
+    contributions: [
+      "Built UI and interaction logic",
+      "Implemented cart state handling",
+      "Developed dynamic user interactions",
+      "Structured frontend for scalability"
+    ],
+
     role: "Fullstack",
     date: "July 2025",
     tech: ["HTML", "CSS", "JavaScript"],
@@ -99,9 +208,27 @@ export const projects = [
 
   {
     title: "Grocery Calculator & Listing Mobile App",
-    description:
-      "Android app for listing grocery items and calculating total expenses. Focused on mobile UI design, input handling, and real-time computation of costs.",
-    role: "Mobile dev",
+
+    problem:
+      "Tracking grocery expenses manually made it difficult to monitor total costs in real time.",
+
+    solution:
+      "Developed an Android app that allows users to list grocery items and calculate total expenses instantly.",
+
+    features: [
+      "Item listing system",
+      "Real-time cost calculation",
+      "Simple and intuitive mobile UI"
+    ],
+
+    contributions: [
+      "Designed mobile interface",
+      "Implemented input handling",
+      "Built real-time calculation logic",
+      "Ensured smooth user interaction"
+    ],
+
+    role: "Mobile Developer",
     date: "June 2025",
     tech: ["Java", "Android Studio"],
     github: "#",
@@ -114,8 +241,26 @@ export const projects = [
 
   {
     title: "Song Archive System",
-    description:
-      "Web-based system for organizing and managing song records with categorized listings and search functionality. Implements CRUD operations and a structured interface for efficient data access.",
+
+    problem:
+      "Managing song records without a system made searching and organizing data inefficient.",
+
+    solution:
+      "Developed a web-based system for organizing and managing song records with categorized listings.",
+
+    features: [
+      "CRUD operations for songs",
+      "Search functionality",
+      "Categorized data organization"
+    ],
+
+    contributions: [
+      "Built frontend interface using PHP, HTML, and CSS",
+      "Implemented CRUD functionality",
+      "Structured UI for efficient data access",
+      "Improved usability through organized layout"
+    ],
+
     role: "Frontend",
     date: "May 2025",
     tech: ["PHP", "HTML", "CSS"],

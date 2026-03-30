@@ -7,6 +7,7 @@ import Achievements from "../sections/Achievements";
 import Contact from "../sections/Contact";
 import Footer from "../components/layout/Footer";
 import Skills from "../sections/Skills";
+import ScrollToTop from "../components/ScrollToTop";  
 
 export default function Home() {
   return (
@@ -20,6 +21,8 @@ export default function Home() {
       <Achievements />
       <Contact />
       <Footer />
+
+      <ScrollToTop />
     </>
   );
 }

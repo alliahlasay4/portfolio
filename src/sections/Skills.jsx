@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 const skills = {
-  "Frontend": [
+  Frontend: [
     "React",
     "JavaScript",
     "HTML",
@@ -9,13 +9,11 @@ const skills = {
     "Tailwind",
     "Bootstrap"
   ],
-
-  "Backend": [
+  Backend: [
     "PHP",
     "MongoDB",
     "MySQL"
   ],
-
   "Programming Languages": [
     "Python",
     "Java",
@@ -23,7 +21,6 @@ const skills = {
     "C++",
     "Dart"
   ],
-
   "Tools & Software": [
     "Git",
     "GitHub",
@@ -38,15 +35,15 @@ const skills = {
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-28 bg-primary">
+    <section id="skills" className="py-16 md:py-20 bg-primary scroll-mt-24">
 
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
 
-        <h2 className="text-4xl md:text-5xl font-bold text-dark mb-16">
+        <h2 className="text-4xl md:text-5xl font-bold text-dark mb-10">
           Skills
         </h2>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
 
           {Object.entries(skills).map(([category, items], index) => (
 
@@ -55,11 +52,11 @@ export default function Skills() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="bg-white p-6 rounded-xl shadow-sm"
+              transition={{ delay: index * 0.08 }}
+              className="bg-white p-5 rounded-xl shadow-sm"
             >
 
-              <h3 className="text-xl font-bold text-dark mb-4">
+              <h3 className="text-lg font-bold text-dark mb-3">
                 {category}
               </h3>
 
@@ -67,7 +64,7 @@ export default function Skills() {
                 {items.map((skill, i) => (
                   <span
                     key={i}
-                    className="text-sm bg-accent text-dark px-3 py-1 rounded-full"
+                    className="text-sm bg-accent text-dark px-2.5 py-1 rounded-full"
                   >
                     {skill}
                   </span>

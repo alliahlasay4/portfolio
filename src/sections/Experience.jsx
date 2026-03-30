@@ -21,7 +21,7 @@ const container = {
   show: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2
+      staggerChildren: 0.15
     }
   }
 };
@@ -33,16 +33,16 @@ const card = {
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-16 md:py-20 bg-primary">
+    <section id="experience" className="py-16 md:py-20 bg-primary scroll-mt-24">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
 
-        {/* TITLE ANIMATION */}
+        {/* TITLE */}
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-bold text-dark mb-16"
+          className="text-4xl md:text-5xl font-bold text-dark mb-10"
         >
           Experience
         </motion.h2>
@@ -53,19 +53,19 @@ export default function Experience() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="space-y-10"
+          className="space-y-6"
         >
           {experience.map((job, index) => (
             <motion.div
               key={index}
               variants={card}
-              whileHover={{ y: -6, scale: 1.01 }}
-              transition={{ duration: 0.25 }}
-              className="bg-white rounded-xl p-8 shadow-md hover:shadow-lg transition"
+              whileHover={{ y: -4, scale: 1.01 }}
+              transition={{ duration: 0.2 }}
+              className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition"
             >
 
-              <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
-                <h3 className="text-xl font-bold text-dark">
+              <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-3">
+                <h3 className="text-lg font-bold text-dark">
                   {job.role} • {job.company}
                 </h3>
 
@@ -74,7 +74,7 @@ export default function Experience() {
                 </span>
               </div>
 
-              <ul className="list-disc pl-5 text-dark space-y-2 mb-4">
+              <ul className="list-disc pl-5 text-dark space-y-1.5 mb-3 text-sm">
                 {job.points.map((p, i) => (
                   <li key={i}>{p}</li>
                 ))}
@@ -84,7 +84,7 @@ export default function Experience() {
                 {job.tech.map((tech, i) => (
                   <span
                     key={i}
-                    className="text-xs bg-accent text-dark px-3 py-1 rounded-full"
+                    className="text-xs bg-accent text-dark px-2.5 py-1 rounded-full"
                   >
                     {tech}
                   </span>

@@ -21,7 +21,7 @@ export default function Projects() {
     others.slice(page * perPage, page * perPage + perPage);
 
   return (
-<section id="projects" className="py-16 md:py-20 bg-white">
+    <section id="projects" className="py-16 md:py-20 bg-white scroll-mt-24">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
 
         <p className="text-secondary font-medium mb-2">
@@ -271,9 +271,42 @@ function ProjectModal({ project, close, onPrev, onNext }) {
             </span>
           </div>
 
-          <p className="text-dark mb-6">
-            {project.description}
-          </p>
+          
+          <div className="space-y-4 text-dark text-sm mb-6">
+
+            {/* Problem */}
+            <div>
+              <h4 className="font-semibold">Problem</h4>
+              <p>{project.problem}</p>
+            </div>
+
+            {/* Solution */}
+            <div>
+              <h4 className="font-semibold">Solution</h4>
+              <p>{project.solution}</p>
+            </div>
+
+            {/* Features */}
+            <div>
+              <h4 className="font-semibold">Key Features</h4>
+              <ul className="list-disc pl-5 space-y-1">
+                {project.features?.map((f, i) => (
+                  <li key={i}>{f}</li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Contributions */}
+            <div>
+              <h4 className="font-semibold">My Contributions</h4>
+              <ul className="list-disc pl-5 space-y-1">
+                {project.contributions?.map((c, i) => (
+                  <li key={i}>{c}</li>
+                ))}
+              </ul>
+            </div>
+
+          </div>
 
           <div className="flex flex-wrap gap-2 mb-6">
             {project.tech.map((tech, i) => (
@@ -285,7 +318,19 @@ function ProjectModal({ project, close, onPrev, onNext }) {
               </span>
             ))}
           </div>
-          <div className="mb-2" />
+
+          <div className="flex gap-3 mb-4 flex-wrap">
+            {project.github && (
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2 text-sm font-medium border border-dark rounded-lg hover:bg-dark hover:text-white transition"
+              >
+                View Code
+              </a>
+            )}
+          </div>
 
         </div>
       </div>
