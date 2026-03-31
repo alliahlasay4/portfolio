@@ -30,7 +30,13 @@ export default function Contact() {
           Feel free to reach out if you'd like to collaborate or discuss a project.
         </motion.p>
 
-        <div className="space-y-0.5 mb-4 w-fit mx-auto bg-white/60 backdrop-blur-md rounded-xl py-3 px-4 shadow-lg">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.15 }}
+          viewport={{ once: true }}
+          className="space-y-0.5 mb-4 w-fit mx-auto bg-white/60 backdrop-blur-md rounded-xl py-3 px-4 shadow-lg"
+        >
 
           {/* EMAIL */}
           <a
@@ -54,7 +60,7 @@ export default function Contact() {
             </span>
           </a>
 
-        </div>
+        </motion.div>
 
         {/* BUTTONS */}
         <motion.div
