@@ -1,99 +1,78 @@
-import { motion } from "framer-motion";
-
-const experience = [
-  {
-    role: "Frontend Developer Intern",
-    company: "Supsoft Tech",
-    period: "2026 – Present",
-    points: [
-      "Develop responsive UI components using React, HTML, CSS, and JavaScript.",
-      "Translate Figma UI designs into functional frontend pages.",
-      "Integrate frontend components with backend-driven data.",
-      "Ensure cross-browser compatibility and responsive behavior.",
-      "Debug client-side issues and improve usability and performance."
-    ],
-    tech: ["React", "JavaScript", "HTML", "CSS", "Figma"]
-  }
-];
-
-const container = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15
-    }
-  }
-};
-
-const card = {
-  hidden: { opacity: 0, y: 40 },
-  show: { opacity: 1, y: 0 }
-};
+import { portfolioData } from "../data/portfolioData";
+import { FaBriefcase, FaCalendarAlt, FaMapMarkerAlt } from "react-icons/fa";
 
 export default function Experience() {
+  const { experience } = portfolioData;
+
   return (
-    <section id="experience" className="py-14 md:py-16 bg-primary scroll-mt-24">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+    <section id="experience" className="py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div className="max-w-3xl mb-12">
+          <p className="text-xs font-bold uppercase tracking-wider text-brand-blue mb-1">
+            Career History
+          </p>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
+            Professional Experience
+          </h2>
+        </div>
 
-        {/* TITLE */}
-        <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-bold text-dark mb-6"
-        >
-          Experience
-        </motion.h2>
-
-        {/* EXPERIENCE LIST */}
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="space-y-4"
-        >
+        <div className="space-y-8">
           {experience.map((job, index) => (
-            <motion.div
+            <div
               key={index}
-              variants={card}
-              whileHover={{ y: -4, scale: 1.01 }}
-              transition={{ duration: 0.2 }}
-              className="bg-white rounded-xl p-5 shadow-md hover:shadow-lg transition"
+              className="p-6 sm:p-8 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-4 hover:border-brand-blue/40 dark:hover:border-brand-blue/40 transition-colors duration-200"
             >
+              <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 pb-4 border-b border-slate-100 dark:border-slate-800">
+                <div className="flex items-center gap-3">
+                  <div className="p-3 rounded-xl bg-brand-blue/10 text-brand-blue text-lg">
+                    <FaBriefcase />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+                      {job.role}
+                    </h3>
+                    <p className="text-sm text-brand-blue font-medium">
+                      {job.company} • <span className="text-slate-500 dark:text-slate-400 font-normal">{job.type}</span>
+                    </p>
+                  </div>
+                </div>
 
-              <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
-                <h3 className="text-lg font-bold text-dark">
-                  {job.role} • {job.company}
-                </h3>
-
-                <span className="text-sm text-dark">
-                  {job.period}
-                </span>
+                <div className="flex items-center gap-4 text-xs text-slate-500 dark:text-slate-400">
+                  <span className="flex items-center gap-1">
+                    <FaCalendarAlt /> {job.period}
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <FaMapMarkerAlt /> {job.location}
+                  </span>
+                </div>
               </div>
 
-              <ul className="list-disc pl-5 text-dark space-y-1 mb-2 text-sm">
-                {job.points.map((p, i) => (
-                  <li key={i}>{p}</li>
+              <p className="text-sm text-slate-700 dark:text-slate-300">
+                {job.description}
+              </p>
+
+              <ul className="list-disc pl-5 space-y-1.5 text-sm text-slate-600 dark:text-slate-300">
+                {job.points.map((pt, i) => (
+                  <li key={i} className="leading-relaxed">
+                    {pt}
+                  </li>
                 ))}
               </ul>
 
-              <div className="flex flex-wrap gap-2">
-                {job.tech.map((tech, i) => (
+              <div className="pt-2 flex flex-wrap gap-1.5">
+                {job.tech.map((t, i) => (
                   <span
                     key={i}
-                    className="text-xs bg-accent text-dark px-2.5 py-1 rounded-full"
+                    className="text-xs font-medium px-2.5 py-1 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700"
                   >
-                    {tech}
+                    {t}
                   </span>
                 ))}
               </div>
-
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
 
       </div>
     </section>

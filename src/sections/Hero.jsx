@@ -1,191 +1,235 @@
-import { motion, useScroll, useTransform } from "framer-motion";
-import { FaGithub, FaLinkedin, FaEnvelope, FaPhone } from "react-icons/fa";
-import me from "../assets/me2.png";
-
+import { useState } from "react";
+import { FaGithub, FaLinkedin, FaEnvelope, FaFileDownload, FaArrowRight, FaCode, FaCheckCircle, FaGraduationCap } from "react-icons/fa";
+import { portfolioData } from "../data/portfolioData";
+import meImg from "../assets/lasay_2x2.jpg";
 
 export default function Hero() {
-
-  const { scrollY } = useScroll();
-
-  const bgY = useTransform(scrollY, [0, 500], [0, -60]);
-  const imageY = useTransform(scrollY, [0, 500], [0, -30]);
-
+  const { personal, upskillingNotice } = portfolioData;
+  const [viewMode, setViewMode] = useState("photo"); // 'photo' | 'code'
 
   return (
-    <section
-      id="hero"
-      className="min-h-[80vh] md:min-h-screen bg-primary flex items-start md:items-center pt-20 md:pt-10 pb-16 md:pb-24 overflow-hidden scroll-mt-24"
-    >
-      <motion.div
-        style={{ y: bgY }}
-        className="
-    absolute inset-0
-    bg-[url('/backgrounds/bg.png')]
-    bg-cover
-    bg-[position:60%_center]
-    opacity-15
-    pointer-events-none
-    blur-[1px]
-  "
-      ></motion.div>
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 grid lg:grid-cols-2 items-center gap-10 md:gap-16">
+    <section id="hero" className="relative min-h-[90dvh] flex items-center pt-24 sm:pt-32 pb-14 sm:pb-16 overflow-hidden bg-canvas-light dark:bg-canvas-dark text-slate-900 dark:text-slate-100 transition-colors duration-200 w-full max-w-full">
+      
+      {/* High-Visibility Micro Polka Dot Matrix Pattern */}
+      <div className="absolute inset-0 bg-[radial-gradient(#94A3B8_1.25px,transparent_1.25px)] dark:bg-[radial-gradient(#4B5563_1.25px,transparent_1.25px)] [background-size:20px_20px] opacity-70 dark:opacity-60 pointer-events-none" />
 
-        {/* LEFT SIDE */}
-        <div className="space-y-5 md:space-y-6 text-center lg:text-left max-w-2xl">
+      {/* Seamless Radial/Linear Gradient Fade Layer */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-canvas-light/50 to-canvas-light dark:via-canvas-dark/50 dark:to-canvas-dark pointer-events-none" />
 
-          {/* MOBILE PROFILE IMAGE */}
-          <div className="flex justify-center lg:hidden mb-4">
-            <motion.img
-              src={me}
-              alt="Alliah"
-              style={{ y: imageY }}
-              className="h-32 w-32 object-cover rounded-full shadow-lg border-4 border-white"
-            />
-          </div>
-          {/* NAME */}
-          <div className="space-y-1 translate-y-2 md:translate-y-3">
-            {/* NAME */}
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="text-secondary text-lg md:text-xl font-semibold tracking-wide"
-            >
-              Alliah Cassandra Lasay
-            </motion.p>
-
-            {/* ROLE */}
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.05 }}
-              className="text-dark text-sm md:text-base text-dark/70"
-            >
-              Frontend Developer • React • UI/UX Focused
-            </motion.p>
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full max-w-full overflow-hidden grid lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+        
+        {/* Left Copy & Actions Column */}
+        <div className="lg:col-span-7 space-y-5 sm:space-y-6 text-left min-w-0 max-w-full">
+          
+          {/* Status Badge */}
+          <div className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1.5 rounded-full bg-white/90 dark:bg-surface-dark/90 backdrop-blur-md border border-slate-200 dark:border-borderSubtle-dark text-[11px] sm:text-xs font-mono text-slate-700 dark:text-slate-300 shadow-sm max-w-full min-w-0">
+            <span className="w-2 h-2 rounded-full bg-brand-emerald shrink-0 animate-pulse" />
+            <span className="text-slate-500 dark:text-slate-400 shrink-0">{upskillingNotice.title}:</span>
+            <span className="text-brand-indigo dark:text-brand-sky font-semibold truncate">{upskillingNotice.highlight}</span>
           </div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-7xl font-extrabold leading-tight"
-          >
-            <span className="block text-dark">Frontend Developer</span>
-            <span className="block text-secondary font-extrabold">
-              Building clean & responsive interfaces
-            </span>
-          </motion.h1>
+          {/* Headline */}
+          <div className="space-y-2 sm:space-y-3 min-w-0 max-w-full">
+            <h1 className="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100 leading-[1.15] break-words">
+              {personal.name} <br />
+              <span className="text-brand-indigo dark:text-brand-sky">
+                Frontend Developer
+              </span>
+            </h1>
+            <p className="text-sm sm:text-base lg:text-lg text-slate-600 dark:text-slate-400 max-w-xl leading-relaxed pt-1 font-normal break-words">
+              {personal.bioShort}
+            </p>
+          </div>
 
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-base md:text-lg text-dark max-w-xl mx-auto lg:mx-0"
-          >
-            I build responsive and user-focused web applications using React,
-            with a strong emphasis on clean UI, usability, and performance.
-          </motion.p>
-
-          {/* BUTTONS */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="flex flex-wrap justify-center lg:justify-start gap-4 md:gap-6"
-          >
+          {/* Action Buttons */}
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2 max-w-full">
             <a
               href="#projects"
-              className="px-6 md:px-8 py-3 md:py-4 bg-secondary text-white rounded-lg font-medium shadow-md hover:scale-105 transition"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-brand-indigo text-white font-semibold text-sm shadow-sm hover:bg-indigo-700 active:translate-y-[1px] hover:-translate-y-0.5 transition-all duration-150 shrink-0"
             >
-              View Projects
+              Explore Projects <FaArrowRight className="text-xs" />
             </a>
 
             <a
               href="#contact"
-              className="px-6 md:px-8 py-3 md:py-4 border border-dark text-dark rounded-lg hover:bg-dark hover:text-white transition"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white/90 dark:bg-surface-dark/90 backdrop-blur-md text-slate-900 dark:text-slate-100 border border-slate-200 dark:border-borderSubtle-dark font-semibold text-sm hover:bg-slate-100 dark:hover:bg-slate-700 active:translate-y-[1px] hover:-translate-y-0.5 transition-all duration-150 shadow-sm shrink-0"
             >
               Contact Me
             </a>
 
             <a
-              href="/portfolio/Lasay_CV.pdf"
+              href={personal.cvUrl}
               download
-              className="px-6 md:px-8 py-3 md:py-4 border border-dark/60 text-dark/80 rounded-lg hover:bg-dark hover:text-white transition"
+              className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl border border-slate-300 dark:border-borderSubtle-dark text-slate-700 dark:text-slate-300 font-medium text-sm hover:border-brand-indigo dark:hover:border-brand-sky active:translate-y-[1px] hover:-translate-y-0.5 transition-all duration-150 shrink-0 bg-white/60 dark:bg-surface-dark/60 backdrop-blur-sm"
             >
+              <FaFileDownload className="text-xs text-brand-indigo dark:text-brand-sky" />
               Download CV
             </a>
+          </div>
 
-          </motion.div>
-
-          {/* SOCIAL LINKS */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            className="flex justify-center lg:justify-start gap-6"
-          >
+          {/* Social Links & Location */}
+          <div className="flex flex-wrap items-center gap-4 sm:gap-5 pt-3 text-slate-500 dark:text-slate-400 max-w-full">
             <a
-              href="https://github.com/alliahlasay4"
+              href={personal.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-dark text-2xl hover:text-secondary hover:scale-110 transition"
+              className="hover:text-brand-indigo dark:hover:text-brand-sky text-xl transition-colors duration-150"
+              aria-label="GitHub"
             >
               <FaGithub />
             </a>
-
             <a
-              href="https://www.linkedin.com/in/alliah-cassandra-lasay-28519326a/"
+              href={personal.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-dark text-2xl hover:text-secondary hover:scale-110 transition"
+              className="hover:text-brand-indigo dark:hover:text-brand-sky text-xl transition-colors duration-150"
+              aria-label="LinkedIn"
             >
               <FaLinkedin />
             </a>
-
             <a
-              href="mailto:alliahlasay4@gmail.com"
-              className="text-dark text-2xl hover:text-secondary hover:scale-110 transition"
+              href={`mailto:${personal.email}`}
+              className="hover:text-brand-indigo dark:hover:text-brand-sky text-xl transition-colors duration-150"
+              aria-label="Email"
             >
               <FaEnvelope />
             </a>
-
-            <a
-              href="tel:09286593680"
-              className="text-dark text-2xl hover:text-secondary hover:scale-110 transition"
-            >
-              <FaPhone />
-            </a>
-
-          </motion.div>
+            <span className="text-xs font-mono text-slate-400 dark:text-slate-500 pl-3 border-l border-slate-200 dark:border-borderSubtle-dark truncate">
+              {personal.location}
+            </span>
+          </div>
 
         </div>
 
-        {/* RIGHT SIDE IMAGE */}
-        <motion.div
-          initial={{ opacity: 0, x: 60 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.3 }}
-          className="hidden lg:flex justify-center lg:justify-end items-center relative -mt-6"
-        >
-          <motion.img
-            src={me}
-            alt="Alliah"
-            style={{ y: imageY }}
-            className="relative h-[210px] sm:h-[260px] md:h-[310px] lg:h-[360px] xl:h-[420px] object-contain drop-shadow-xl"
-          />
+        {/* Right Developer Showcase Card Column */}
+        <div className="lg:col-span-5 space-y-4 min-w-0 max-w-md mx-auto lg:mx-0 w-full overflow-hidden">
           
-          <div className="absolute bottom-6 w-[300px] md:w-[420px] h-[40px] bg-black/20 blur-2xl rounded-full"></div>
-        </motion.div>
+          {/* Main Showcase Card with Gradient Glow Ring */}
+          <div className="relative group">
+            
+            {/* Subtle Gradient Glow Ring behind card */}
+            <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-brand-indigo via-brand-sky to-emerald-500 opacity-30 blur-lg group-hover:opacity-40 transition-opacity duration-300 pointer-events-none" />
+
+            {/* Card Body */}
+            <div className="relative rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-3.5 sm:p-4 shadow-2xl space-y-3">
+              
+              {/* Card Header Bar */}
+              <div className="flex items-center justify-between px-1 text-xs font-mono">
+                <div className="flex items-center gap-2 text-slate-700 dark:text-slate-300 font-semibold">
+                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
+                  <span>Developer Profile</span>
+                </div>
+
+                <div className="flex bg-slate-100 dark:bg-slate-800 p-0.5 rounded-md text-[10px]">
+                  <button
+                    onClick={() => setViewMode("photo")}
+                    className={`px-2.5 py-1 rounded transition-all font-semibold ${
+                      viewMode === "photo"
+                        ? "bg-brand-indigo text-white shadow"
+                        : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
+                    }`}
+                  >
+                    Photo
+                  </button>
+                  <button
+                    onClick={() => setViewMode("code")}
+                    className={`px-2.5 py-1 rounded transition-all font-semibold ${
+                      viewMode === "code"
+                        ? "bg-brand-indigo text-white shadow"
+                        : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
+                    }`}
+                  >
+                    Code Spec
+                  </button>
+                </div>
+              </div>
+
+              {/* Card Main Display */}
+              {viewMode === "photo" ? (
+                <div className="relative aspect-[4/4.3] w-full rounded-xl overflow-hidden bg-slate-950 border border-slate-200/80 dark:border-slate-800 shadow-md">
+                  <img
+                    src={meImg}
+                    alt={personal.name}
+                    className="w-full h-full object-cover object-top hover:scale-[1.03] transition-transform duration-500"
+                  />
+                  
+                  {/* Glassmorphism Floating Badge Top-Left */}
+                  <div className="absolute top-3 left-3 bg-slate-950/85 backdrop-blur-md text-white text-[10px] sm:text-[11px] font-mono px-3 py-1 rounded-full border border-white/15 flex items-center gap-1.5 shadow-lg">
+                    <span className="w-2 h-2 rounded-full bg-brand-emerald animate-pulse" />
+                    Supsoft Tech Intern
+                  </div>
+
+                  {/* Glassmorphism Floating Badge Bottom-Right */}
+                  <div className="absolute bottom-3 right-3 bg-slate-950/85 backdrop-blur-md text-white text-[10px] sm:text-[11px] font-mono px-3 py-1 rounded-full border border-white/15 flex items-center gap-1.5 shadow-lg">
+                    <FaGraduationCap className="text-amber-400 text-xs" /> DOST Scholar
+                  </div>
+                </div>
+              ) : (
+                <div className="p-4 rounded-xl bg-slate-950 border border-slate-800 font-mono text-[11px] text-slate-300 leading-relaxed overflow-x-auto min-h-[220px]">
+                  <div>
+                    <span className="text-purple-400">const</span>{" "}
+                    <span className="text-yellow-300">developer</span> = &#123;
+                  </div>
+                  <div className="pl-3">
+                    <span className="text-sky-300">name</span>:{" "}
+                    <span className="text-emerald-400">"{personal.name}"</span>,
+                  </div>
+                  <div className="pl-3">
+                    <span className="text-sky-300">role</span>:{" "}
+                    <span className="text-emerald-400">"Frontend Intern @ Supsoft Tech"</span>,
+                  </div>
+                  <div className="pl-3">
+                    <span className="text-sky-300">stack</span>: [
+                    <span className="text-amber-300">"React 19"</span>,{" "}
+                    <span className="text-amber-300">"JS"</span>,{" "}
+                    <span className="text-amber-300">"Tailwind"</span>],
+                  </div>
+                  <div className="pl-3">
+                    <span className="text-sky-300">credentials</span>: [
+                    <span className="text-emerald-400">"Cisco HTML & JS"</span>,{" "}
+                    <span className="text-emerald-400">"IT Specialist DB"</span>],
+                  </div>
+                  <div className="pl-3">
+                    <span className="text-sky-300">availableForHire</span>:{" "}
+                    <span className="text-purple-400">true</span>
+                  </div>
+                  <div>&#125;;</div>
+                </div>
+              )}
+
+              {/* Bottom Quick Meta Strip */}
+              <div className="pt-2 px-1 flex items-center justify-between text-xs font-mono border-t border-slate-100 dark:border-slate-800/80">
+                <span className="font-semibold text-slate-900 dark:text-slate-100">Alliah Cassandra Lasay</span>
+                <span className="text-[10px] font-semibold text-brand-indigo dark:text-brand-sky bg-brand-indigo/10 dark:bg-brand-sky/10 px-2.5 py-0.5 rounded-md border border-brand-indigo/20">
+                  DLSU-D BS IT
+                </span>
+              </div>
+
+            </div>
+          </div>
+
+          {/* Quick Highlight Cards Bar */}
+          <div className="grid grid-cols-2 gap-3 text-xs font-mono w-full max-w-full">
+            <div className="p-3 rounded-xl bg-white/90 dark:bg-surface-dark/90 backdrop-blur-md border border-slate-200 dark:border-borderSubtle-dark flex items-center gap-2.5 shadow-sm min-w-0">
+              <FaCheckCircle className="text-emerald-500 shrink-0" />
+              <div className="min-w-0">
+                <p className="font-bold text-slate-900 dark:text-slate-100 truncate">Supsoft Tech</p>
+                <p className="text-[10px] text-slate-500 dark:text-slate-400 truncate">Frontend Intern</p>
+              </div>
+            </div>
+
+            <div className="p-3 rounded-xl bg-white/90 dark:bg-surface-dark/90 backdrop-blur-md border border-slate-200 dark:border-borderSubtle-dark flex items-center gap-2.5 shadow-sm min-w-0">
+              <FaCheckCircle className="text-brand-sky shrink-0" />
+              <div className="min-w-0">
+                <p className="font-bold text-slate-900 dark:text-slate-100 truncate">DLSU-D IT</p>
+                <p className="text-[10px] text-slate-500 dark:text-slate-400 truncate">DOST Scholar</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
 
       </div>
-
-      <motion.div
-        animate={{ y: [0, 10, 0] }}
-        transition={{ repeat: Infinity, duration: 1.5 }}
-        className="hidden md:block absolute bottom-0 lg:bottom-0 left-1/2 -translate-x-1/2 text-dark text-lg opacity-70"
-      >
-        ↓
-      </motion.div>
     </section>
   );
 }
