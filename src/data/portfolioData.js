@@ -14,7 +14,7 @@ export const portfolioData = {
     location: "Cavite, Philippines",
     github: "https://github.com/alliahlasay4",
     linkedin: "https://www.linkedin.com/in/alliah-cassandra-lasay-28519326a/",
-    cvUrl: "./Lasay_CV.pdf",
+    cvUrl: "/Lasay_CV.pdf",
     cvUpdating: true,
   },
 
@@ -190,10 +190,10 @@ export const portfolioData = {
       github: "https://github.com/alliahlasay4/blood-donation-management-system",
       demo: "#",
       images: [
-        "./projects/blood-system-1.png",
-        "./projects/blood-system-2.png",
-        "./projects/blood-system-3.png",
-        "./projects/blood-system-4.png"
+        "/projects/blood-system-1.png",
+        "/projects/blood-system-2.png",
+        "/projects/blood-system-3.png",
+        "/projects/blood-system-4.png"
       ]
     },
     {
@@ -220,10 +220,10 @@ export const portfolioData = {
       github: "https://github.com/alliahlasay4/inturn",
       demo: "#",
       images: [
-        "./projects/intern-system-1.png",
-        "./projects/intern-system-2.png",
-        "./projects/intern-system-3.png",
-        "./projects/intern-system-4.png"
+        "/projects/intern-system-1.png",
+        "/projects/intern-system-2.png",
+        "/projects/intern-system-3.png",
+        "/projects/intern-system-4.png"
       ]
     },
     {
@@ -249,8 +249,8 @@ export const portfolioData = {
       github: "https://github.com/alliahlasay4/grocery-calculator",
       demo: "#",
       images: [
-        "./projects/grocery-app-1.png",
-        "./projects/grocery-app-2.png"
+        "/projects/grocery-app-1.png",
+        "/projects/grocery-app-2.png"
       ]
     },
     {
@@ -276,9 +276,9 @@ export const portfolioData = {
       github: "https://github.com/alliahlasay4/employee-ms",
       demo: "#",
       images: [
-        "./projects/employee-system-1.png",
-        "./projects/employee-system-2.png",
-        "./projects/employee-system-3.png"
+        "/projects/employee-system-1.png",
+        "/projects/employee-system-2.png",
+        "/projects/employee-system-3.png"
       ]
     },
     {
@@ -304,9 +304,9 @@ export const portfolioData = {
       github: "https://github.com/alliahlasay4/saloan",
       demo: "#",
       images: [
-        "./projects/loaning-app-1.png",
-        "./projects/loaning-app-2.png",
-        "./projects/loaning-app-3.png"
+        "/projects/loaning-app-1.png",
+        "/projects/loaning-app-2.png",
+        "/projects/loaning-app-3.png"
       ]
     },
     {
@@ -332,8 +332,8 @@ export const portfolioData = {
       github: "https://github.com/alliahlasay4/foodpanda",
       demo: "#",
       images: [
-        "./projects/food-system-1.png",
-        "./projects/food-system-2.png"
+        "/projects/food-system-1.png",
+        "/projects/food-system-2.png"
       ]
     },
     {
@@ -358,7 +358,7 @@ export const portfolioData = {
       github: "https://github.com/alliahlasay4/todo",
       demo: "#",
       images: [
-        "./projects/todo-app-1.png"
+        "/projects/todo-app-1.png"
       ]
     }
   ]
