@@ -1,211 +1,157 @@
-import { useState } from "react";
-import { FaGithub, FaLinkedin, FaEnvelope, FaFileDownload, FaArrowRight, FaCode, FaGraduationCap } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope, FaFileDownload, FaArrowRight, FaGraduationCap } from "react-icons/fa";
 import { portfolioData } from "../data/portfolioData";
 import meImg from "../assets/lasay_2x2.jpg";
 
 export default function Hero() {
   const { personal, upskillingNotice } = portfolioData;
-  const [viewMode, setViewMode] = useState("photo"); // 'photo' | 'code'
 
   return (
-    <section id="hero" className="relative min-h-[90dvh] flex items-center pt-24 sm:pt-32 pb-14 sm:pb-16 overflow-hidden bg-canvas-light dark:bg-canvas-dark text-slate-900 dark:text-slate-100 transition-colors duration-200 w-full max-w-full">
-      
-      {/* High-Visibility Micro Polka Dot Matrix Pattern */}
-      <div className="absolute inset-0 bg-[radial-gradient(#94A3B8_1.25px,transparent_1.25px)] dark:bg-[radial-gradient(#4B5563_1.25px,transparent_1.25px)] [background-size:20px_20px] opacity-70 dark:opacity-60 pointer-events-none" />
+    <section id="hero" className="relative pt-20 sm:pt-24 pb-14 sm:pb-16 bg-canvas-light dark:bg-canvas-dark text-slate-900 dark:text-slate-100 transition-colors duration-200 w-full border-b border-slate-200 dark:border-slate-800">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
 
-      {/* Seamless Radial/Linear Gradient Fade Layer */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-canvas-light/50 to-canvas-light dark:via-canvas-dark/50 dark:to-canvas-dark pointer-events-none" />
-
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full max-w-full overflow-hidden grid lg:grid-cols-12 gap-8 lg:gap-10 items-center">
-        
-        {/* Left Copy & Actions Column */}
-        <div className="lg:col-span-7 space-y-5 sm:space-y-6 text-left min-w-0 max-w-full">
+        {/* Top Header Strip: Metadata + Small Photo + Status */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 pb-6 border-b border-slate-200 dark:border-slate-800 items-center">
           
-          {/* Status Badge */}
-          <div className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1.5 rounded-full bg-white/90 dark:bg-surface-dark/90 backdrop-blur-md border border-slate-200 dark:border-borderSubtle-dark text-[11px] sm:text-xs font-mono text-slate-700 dark:text-slate-300 shadow-sm max-w-full min-w-0">
-            <span className="w-2 h-2 rounded-full bg-brand-emerald shrink-0 animate-pulse" />
-            <span className="text-slate-500 dark:text-slate-400 shrink-0">{upskillingNotice.title}:</span>
-            <span className="text-brand-indigo dark:text-brand-sky font-semibold truncate">{upskillingNotice.highlight}</span>
+          {/* Identity & Photo */}
+          <div className="md:col-span-6 flex items-center gap-4">
+            <div className="relative w-14 h-14 sm:w-16 sm:h-16 shrink-0 rounded-lg overflow-hidden border border-slate-300 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 shadow-sm">
+              <img
+                src={meImg}
+                alt={personal.name}
+                className="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div className="min-w-0">
+              <span className="text-xs font-mono font-medium tracking-wider uppercase text-slate-500 dark:text-slate-400 block">
+                Portfolio & Engineering Dossier
+              </span>
+              <h2 className="text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100 truncate">
+                {personal.name}
+              </h2>
+              <div className="text-xs font-mono text-slate-600 dark:text-slate-400 mt-0.5">
+                <span>{personal.location}</span>
+              </div>
+            </div>
           </div>
 
-          {/* Headline */}
-          <div className="space-y-2 sm:space-y-3 min-w-0 max-w-full">
-            <h1 className="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100 leading-[1.15] break-words">
-              {personal.name} <br />
-              <span className="text-brand-indigo dark:text-brand-sky">
-                Frontend Developer
-              </span>
+          {/* Availability & Target Roles */}
+          <div className="md:col-span-6 md:text-right flex flex-col md:items-end justify-center">
+            <div className="inline-flex items-center gap-2 text-xs font-mono font-medium text-slate-800 dark:text-slate-200">
+              <span className="w-2 h-2 rounded-full bg-emerald-500" />
+              <span>Available for Tech Opportunities</span>
+            </div>
+            <p className="text-xs font-mono text-slate-500 dark:text-slate-400 mt-1 max-w-sm">
+              {upskillingNotice.highlight}
+            </p>
+          </div>
+        </div>
+
+        {/* Main Editorial Headline Section */}
+        <div className="py-10 sm:py-14 border-b border-slate-200 dark:border-slate-800">
+          <div className="max-w-4xl">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100 leading-[1.12]">
+              Frontend Developer building responsive, tested, and reliable web applications.
             </h1>
-            <p className="text-sm sm:text-base lg:text-lg text-slate-600 dark:text-slate-400 max-w-xl leading-relaxed pt-1 font-normal break-words">
+            <p className="mt-6 text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed font-normal">
               {personal.bioShort}
             </p>
           </div>
 
-          {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2 max-w-full">
+          {/* Action Row */}
+          <div className="mt-8 flex flex-wrap items-center gap-3">
             <a
               href="#projects"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-brand-indigo text-white font-semibold text-sm shadow-sm hover:bg-indigo-700 active:translate-y-[1px] hover:-translate-y-0.5 transition-all duration-150 shrink-0"
+              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-md bg-slate-900 text-white dark:bg-white dark:text-slate-900 font-semibold text-sm hover:opacity-90 active:translate-y-[1px] transition-all"
             >
               Explore Projects <FaArrowRight className="text-xs" />
             </a>
 
             <a
               href="#contact"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white/90 dark:bg-surface-dark/90 backdrop-blur-md text-slate-900 dark:text-slate-100 border border-slate-200 dark:border-borderSubtle-dark font-semibold text-sm hover:bg-slate-100 dark:hover:bg-slate-700 active:translate-y-[1px] hover:-translate-y-0.5 transition-all duration-150 shadow-sm shrink-0"
+              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-md border border-slate-300 dark:border-slate-700 text-slate-800 dark:text-slate-200 font-semibold text-sm hover:bg-slate-100 dark:hover:bg-slate-800 active:translate-y-[1px] transition-all"
             >
               Contact Me
             </a>
 
             <a
               href={personal.cvUrl}
-              download
-              className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl border border-slate-300 dark:border-borderSubtle-dark text-slate-700 dark:text-slate-300 font-medium text-sm hover:border-brand-indigo dark:hover:border-brand-sky active:translate-y-[1px] hover:-translate-y-0.5 transition-all duration-150 shrink-0 bg-white/60 dark:bg-surface-dark/60 backdrop-blur-sm"
+              download="Lasay_Resume.pdf"
+              className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-md border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 font-medium text-sm hover:text-slate-900 dark:hover:text-slate-100 hover:border-slate-400 active:translate-y-[1px] transition-all"
             >
-              <FaFileDownload className="text-xs text-brand-indigo dark:text-brand-sky" />
-              Download CV
+              <FaFileDownload className="text-xs" />
+              Download Resume
             </a>
-          </div>
 
-          {/* Social Links & Location */}
-          <div className="flex flex-wrap items-center gap-4 sm:gap-5 pt-3 text-slate-500 dark:text-slate-400 max-w-full">
-            <a
-              href={personal.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-brand-indigo dark:hover:text-brand-sky text-xl transition-colors duration-150"
-              aria-label="GitHub"
-            >
-              <FaGithub />
-            </a>
-            <a
-              href={personal.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-brand-indigo dark:hover:text-brand-sky text-xl transition-colors duration-150"
-              aria-label="LinkedIn"
-            >
-              <FaLinkedin />
-            </a>
-            <a
-              href={`mailto:${personal.email}`}
-              className="hover:text-brand-indigo dark:hover:text-brand-sky text-xl transition-colors duration-150"
-              aria-label="Email"
-            >
-              <FaEnvelope />
-            </a>
-            <span className="text-xs font-mono text-slate-400 dark:text-slate-500 pl-3 border-l border-slate-200 dark:border-borderSubtle-dark truncate">
-              {personal.location}
-            </span>
+            <div className="flex items-center gap-3 pl-3 ml-2 border-l border-slate-300 dark:border-slate-700 text-slate-600 dark:text-slate-400">
+              <a
+                href={personal.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-slate-900 dark:hover:text-white text-lg transition-colors"
+                aria-label="GitHub"
+              >
+                <FaGithub />
+              </a>
+              <a
+                href={personal.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-slate-900 dark:hover:text-white text-lg transition-colors"
+                aria-label="LinkedIn"
+              >
+                <FaLinkedin />
+              </a>
+              <a
+                href={`mailto:${personal.email}`}
+                className="hover:text-slate-900 dark:hover:text-white text-lg transition-colors"
+                aria-label="Email"
+              >
+                <FaEnvelope />
+              </a>
+            </div>
           </div>
-
         </div>
 
-        {/* Right Developer Showcase Card Column */}
-        <div className="lg:col-span-5 space-y-4 min-w-0 max-w-md mx-auto lg:mx-0 w-full overflow-hidden">
+        {/* Bottom Swiss 3-Column Info Rail */}
+        <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-slate-200 dark:divide-slate-800 pt-8">
           
-          {/* Main Showcase Card with Gradient Glow Ring */}
-          <div className="relative group">
-            
-            {/* Subtle Gradient Glow Ring behind card */}
-            <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-brand-indigo via-brand-sky to-emerald-500 opacity-30 blur-lg group-hover:opacity-40 transition-opacity duration-300 pointer-events-none" />
+          {/* Column 1: Core Technologies */}
+          <div className="pb-6 md:pb-0 md:pr-6">
+            <span className="text-[11px] font-mono tracking-wider uppercase text-slate-400 dark:text-slate-500 block mb-2 font-semibold">
+              01 / Core Stack
+            </span>
+            <p className="text-sm font-semibold text-slate-800 dark:text-slate-200">
+              React, TypeScript, Tailwind CSS, JavaScript
+            </p>
+            <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
+              Component architecture, state management, and modern responsive design.
+            </p>
+          </div>
 
-            {/* Card Body */}
-            <div className="relative rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-3.5 sm:p-4 shadow-2xl space-y-3">
-              
-              {/* Card Header Bar */}
-              <div className="flex items-center justify-between px-1 text-xs font-mono">
-                <div className="flex items-center gap-2 text-slate-700 dark:text-slate-300 font-semibold">
-                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
-                  <span>Developer Profile</span>
-                </div>
+          {/* Column 2: Verification & Testing */}
+          <div className="py-6 md:py-0 md:px-6">
+            <span className="text-[11px] font-mono tracking-wider uppercase text-slate-400 dark:text-slate-500 block mb-2 font-semibold">
+              02 / Testing & Rigor
+            </span>
+            <p className="text-sm font-semibold text-slate-800 dark:text-slate-200">
+              Vitest, React Testing Library, Playwright
+            </p>
+            <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
+              Automated unit, integration, and end-to-end frontend test coverage.
+            </p>
+          </div>
 
-                <div className="flex bg-slate-100 dark:bg-slate-800 p-0.5 rounded-md text-[10px]">
-                  <button
-                    onClick={() => setViewMode("photo")}
-                    className={`px-2.5 py-1 rounded transition-all font-semibold ${
-                      viewMode === "photo"
-                        ? "bg-brand-indigo text-white shadow"
-                        : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
-                    }`}
-                  >
-                    Photo
-                  </button>
-                  <button
-                    onClick={() => setViewMode("code")}
-                    className={`px-2.5 py-1 rounded transition-all font-semibold ${
-                      viewMode === "code"
-                        ? "bg-brand-indigo text-white shadow"
-                        : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
-                    }`}
-                  >
-                    Code Spec
-                  </button>
-                </div>
-              </div>
-
-              {/* Card Main Display */}
-              {viewMode === "photo" ? (
-                <div className="relative aspect-[4/4.3] w-full rounded-xl overflow-hidden bg-slate-950 border border-slate-200/80 dark:border-slate-800 shadow-md">
-                  <img
-                    src={meImg}
-                    alt={personal.name}
-                    className="w-full h-full object-cover object-top hover:scale-[1.03] transition-transform duration-500"
-                  />
-                  
-                  {/* Glassmorphism Floating Badge Top-Left */}
-                  <div className="absolute top-3 left-3 bg-slate-950/85 backdrop-blur-md text-white text-[10px] sm:text-[11px] font-mono px-3 py-1 rounded-full border border-white/15 flex items-center gap-1.5 shadow-lg">
-                    <span className="w-2 h-2 rounded-full bg-brand-emerald animate-pulse" />
-                    Supsoft Tech Intern
-                  </div>
-
-                  {/* Glassmorphism Floating Badge Bottom-Right */}
-                  <div className="absolute bottom-3 right-3 bg-slate-950/85 backdrop-blur-md text-white text-[10px] sm:text-[11px] font-mono px-3 py-1 rounded-full border border-white/15 flex items-center gap-1.5 shadow-lg">
-                    <FaGraduationCap className="text-amber-400 text-xs" /> DOST Scholar
-                  </div>
-                </div>
-              ) : (
-                <div className="p-4 rounded-xl bg-slate-950 border border-slate-800 font-mono text-[11px] text-slate-300 leading-relaxed overflow-x-auto min-h-[220px]">
-                  <div>
-                    <span className="text-purple-400">const</span>{" "}
-                    <span className="text-yellow-300">developer</span> = &#123;
-                  </div>
-                  <div className="pl-3">
-                    <span className="text-sky-300">name</span>:{" "}
-                    <span className="text-emerald-400">"{personal.name}"</span>,
-                  </div>
-                  <div className="pl-3">
-                    <span className="text-sky-300">role</span>:{" "}
-                    <span className="text-emerald-400">"Frontend Intern @ Supsoft Tech"</span>,
-                  </div>
-                  <div className="pl-3">
-                    <span className="text-sky-300">stack</span>: [
-                    <span className="text-amber-300">"React 19"</span>,{" "}
-                    <span className="text-amber-300">"JS"</span>,{" "}
-                    <span className="text-amber-300">"Tailwind"</span>],
-                  </div>
-                  <div className="pl-3">
-                    <span className="text-sky-300">credentials</span>: [
-                    <span className="text-emerald-400">"Cisco HTML & JS"</span>,{" "}
-                    <span className="text-emerald-400">"IT Specialist DB"</span>],
-                  </div>
-                  <div className="pl-3">
-                    <span className="text-sky-300">availableForHire</span>:{" "}
-                    <span className="text-purple-400">true</span>
-                  </div>
-                  <div>&#125;;</div>
-                </div>
-              )}
-
-              {/* Bottom Quick Meta Strip */}
-              <div className="pt-2 px-1 flex items-center justify-between text-xs font-mono border-t border-slate-100 dark:border-slate-800/80">
-                <span className="font-semibold text-slate-900 dark:text-slate-100">Alliah Cassandra Lasay</span>
-                <span className="text-[10px] font-semibold text-brand-indigo dark:text-brand-sky bg-brand-indigo/10 dark:bg-brand-sky/10 px-2.5 py-0.5 rounded-md border border-brand-indigo/20">
-                  DLSU-D BS IT
-                </span>
-              </div>
-
-            </div>
+          {/* Column 3: Experience */}
+          <div className="pt-6 md:pt-0 md:pl-6">
+            <span className="text-[11px] font-mono tracking-wider uppercase text-slate-400 dark:text-slate-500 block mb-2 font-semibold">
+              03 / Recent Experience
+            </span>
+            <p className="text-sm font-semibold text-slate-800 dark:text-slate-200">
+              Frontend Intern — Supsoft Tech
+            </p>
+            <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
+              Built intern management portal from Figma designs with PDF generation & themes.
+            </p>
           </div>
 
         </div>

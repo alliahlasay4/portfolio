@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { portfolioData } from "../data/portfolioData";
-import { FaEnvelope, FaPhone, FaGithub, FaLinkedin, FaFileDownload, FaCheck, FaCopy, FaMapMarkerAlt, FaPaperPlane } from "react-icons/fa";
+import { FaEnvelope, FaCheck, FaCopy, FaArrowRight, FaLinkedin, FaGithub, FaFileDownload } from "react-icons/fa";
 
 export default function Contact() {
   const { personal } = portfolioData;
@@ -12,126 +12,155 @@ export default function Contact() {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  return (
-    <section id="contact" className="py-20 relative overflow-hidden bg-canvas-light dark:bg-canvas-dark text-slate-900 dark:text-slate-100 transition-colors duration-200">
-      
-      {/* Background Micro Polka Dot Texture */}
-      <div className="absolute inset-0 bg-[radial-gradient(#CBD5E1_1px,transparent_1px)] dark:bg-[radial-gradient(#374151_1px,transparent_1px)] [background-size:20px_20px] opacity-30 dark:opacity-20 pointer-events-none" />
+  const directChannels = [
+    {
+      index: "01",
+      name: "LinkedIn",
+      detail: "Professional background, updates & messaging",
+      action: "Connect ↗",
+      href: personal.linkedin,
+      external: true,
+      icon: <FaLinkedin />
+    },
+    {
+      index: "02",
+      name: "GitHub",
+      detail: "Code repositories, project commits & contributions",
+      action: "View Profile ↗",
+      href: personal.github,
+      external: true,
+      icon: <FaGithub />
+    },
+    {
+      index: "03",
+      name: "Resume",
+      detail: "Download latest formatted resume (PDF)",
+      action: "Download PDF ↓",
+      href: personal.cvUrl,
+      download: "Lasay_Resume.pdf",
+      icon: <FaFileDownload />
+    }
+  ];
 
-      <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+  return (
+    <section id="contact" className="py-12 sm:py-16 bg-canvas-light dark:bg-canvas-dark text-slate-900 dark:text-slate-100 transition-colors duration-200 w-full border-b border-slate-200 dark:border-slate-800">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         
         {/* Section Header */}
-        <div className="max-w-2xl mx-auto mb-12">
-          <p className="text-xs font-mono font-bold uppercase tracking-wider text-brand-indigo dark:text-brand-sky mb-2">
-            Get In Touch
-          </p>
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight">
-            Let’s Build Something Together
-          </h2>
-          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 mt-4 leading-relaxed">
-            I am currently open to Frontend Developer roles, junior software engineering opportunities, and technical collaborations. Whether you have an open role or just want to connect, my inbox is open.
-          </p>
+        <div className="pb-5 border-b border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row sm:items-end justify-between gap-3">
+          <div>
+            <span className="text-xs font-mono font-medium tracking-wider uppercase text-slate-500 dark:text-slate-400 block mb-1">
+              05 / Direct Inquiries
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100">
+              Get in Touch
+            </h2>
+          </div>
+          <div className="inline-flex items-center gap-2 text-xs font-mono font-medium text-slate-700 dark:text-slate-300">
+            <span className="w-2 h-2 rounded-full bg-emerald-500" />
+            <span>Available for Tech Opportunities</span>
+          </div>
         </div>
 
-        {/* Central High-Impact Contact Card */}
-        <div className="p-8 sm:p-12 rounded-3xl bg-white dark:bg-surface-dark border border-slate-200 dark:border-borderSubtle-dark shadow-xl space-y-8">
+        {/* 2-Column Ledger: Primary Channels (Left) & Profiles/Docs (Right) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 pt-8 items-start">
           
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href={`mailto:${personal.email}`}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-brand-indigo text-white font-semibold text-sm shadow-md hover:bg-indigo-700 transition-all hover:scale-[1.02]"
-            >
-              <FaPaperPlane className="text-xs" /> Send Email Directly
-            </a>
-
-            <button
-              onClick={handleCopyEmail}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 font-semibold text-sm hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors border border-slate-200 dark:border-slate-700"
-            >
-              {copied ? (
-                <>
-                  <FaCheck className="text-emerald-500" /> Copied {personal.email}
-                </>
-              ) : (
-                <>
-                  <FaCopy className="text-slate-500" /> Copy Email Address
-                </>
-              )}
-            </button>
-          </div>
-
-          {/* Quick Info Grid */}
-          <div className="pt-6 border-t border-slate-100 dark:border-slate-800/80 grid sm:grid-cols-3 gap-6 text-left">
-            <div className="flex items-center gap-3">
-              <div className="p-3 rounded-xl bg-brand-sky/10 text-brand-sky text-base shrink-0">
-                <FaEnvelope />
+          {/* Left Column: Direct Communication (6 cols) */}
+          <div className="lg:col-span-6 space-y-6">
+            {/* Email Contact Box */}
+            <div className="p-5 rounded-md border border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-900/40 space-y-3">
+              <div className="flex items-center justify-between text-xs font-mono text-slate-500 dark:text-slate-400">
+                <span>Primary Email</span>
+                <span>Response within 24h</span>
               </div>
-              <div className="min-w-0">
-                <p className="text-xs font-mono text-slate-500 dark:text-slate-400">Email</p>
+
+              <div className="text-lg sm:text-xl font-bold font-mono text-slate-900 dark:text-slate-100 break-all">
+                {personal.email}
+              </div>
+
+              <div className="flex flex-wrap items-center gap-2.5 pt-1">
                 <a
                   href={`mailto:${personal.email}`}
-                  className="text-xs font-bold text-slate-900 dark:text-slate-100 hover:text-brand-indigo dark:hover:text-brand-sky truncate block"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded bg-slate-900 text-white dark:bg-white dark:text-slate-900 text-xs font-mono font-semibold hover:opacity-90 active:translate-y-[1px] transition-all"
                 >
-                  {personal.email}
+                  <FaEnvelope className="text-[11px]" />
+                  <span>Send Email</span>
+                  <FaArrowRight className="text-[9px]" />
                 </a>
+
+                <button
+                  type="button"
+                  onClick={handleCopyEmail}
+                  className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-xs font-mono font-medium hover:bg-slate-100 dark:hover:bg-slate-800 active:translate-y-[1px] transition-all"
+                >
+                  {copied ? (
+                    <>
+                      <FaCheck className="text-emerald-500 text-xs" />
+                      <span>Copied Address</span>
+                    </>
+                  ) : (
+                    <>
+                      <FaCopy className="text-slate-400 text-xs" />
+                      <span>Copy Address</span>
+                    </>
+                  )}
+                </button>
               </div>
             </div>
 
-            <div className="flex items-center gap-3">
-              <div className="p-3 rounded-xl bg-emerald-500/10 text-emerald-500 text-base shrink-0">
-                <FaPhone />
-              </div>
-              <div className="min-w-0">
-                <p className="text-xs font-mono text-slate-500 dark:text-slate-400">Phone</p>
+            {/* Secondary Meta details */}
+            <div className="grid grid-cols-2 gap-4 pt-1 text-xs font-mono">
+              <div className="space-y-0.5">
+                <span className="text-slate-400 dark:text-slate-500 block">Phone</span>
                 <a
                   href={`tel:${personal.phone.replace(/\s+/g, "")}`}
-                  className="text-xs font-bold text-slate-900 dark:text-slate-100 hover:text-brand-indigo dark:hover:text-brand-sky truncate block"
+                  className="text-slate-800 dark:text-slate-200 font-semibold hover:underline"
                 >
                   {personal.phone}
                 </a>
               </div>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <div className="p-3 rounded-xl bg-amber-500/10 text-amber-500 text-base shrink-0">
-                <FaMapMarkerAlt />
-              </div>
-              <div className="min-w-0">
-                <p className="text-xs font-mono text-slate-500 dark:text-slate-400">Location</p>
-                <p className="text-xs font-bold text-slate-900 dark:text-slate-100 truncate">
+              <div className="space-y-0.5">
+                <span className="text-slate-400 dark:text-slate-500 block">Location</span>
+                <span className="text-slate-800 dark:text-slate-200 font-semibold">
                   {personal.location}
-                </p>
+                </span>
               </div>
             </div>
           </div>
 
-          {/* Profile & Resume Quick Buttons */}
-          <div className="pt-4 flex flex-wrap items-center justify-center gap-3">
-            <a
-              href={personal.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 text-white dark:bg-slate-800 dark:text-slate-100 font-semibold text-xs hover:bg-brand-indigo transition-colors"
-            >
-              <FaGithub /> GitHub
-            </a>
+          {/* Right Column: Profiles & Verified Materials (6 cols) */}
+          <div className="lg:col-span-6 space-y-6 lg:pl-6 lg:border-l lg:border-slate-200 dark:lg:border-slate-800">
+            <span className="text-xs font-mono font-semibold tracking-wider uppercase text-slate-400 dark:text-slate-500 block">
+              Professional Profiles & Materials
+            </span>
 
-            <a
-              href={personal.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-brand-indigo text-white font-semibold text-xs hover:bg-indigo-700 transition-colors"
-            >
-              <FaLinkedin /> LinkedIn
-            </a>
+            <div className="divide-y divide-slate-200 dark:divide-slate-800">
+              {directChannels.map((channel, index) => (
+                <a
+                  key={index}
+                  href={channel.href}
+                  target={channel.external ? "_blank" : undefined}
+                  rel={channel.external ? "noopener noreferrer" : undefined}
+                  download={channel.download}
+                  className="group py-4 sm:py-5 flex items-center justify-between gap-4 first:pt-0 last:pb-0 hover:bg-slate-50 dark:hover:bg-slate-800/40 px-2 -mx-2 rounded transition-colors"
+                >
+                  <div className="space-y-0.5 min-w-0">
+                    <div className="flex items-center gap-2">
+                      <span className="text-sm font-bold text-slate-900 dark:text-slate-100 group-hover:text-slate-900 dark:group-hover:text-white transition-colors">
+                        {channel.name}
+                      </span>
+                    </div>
+                    <p className="text-xs text-slate-500 dark:text-slate-400 truncate">
+                      {channel.detail}
+                    </p>
+                  </div>
 
-            <a
-              href={personal.cvUrl}
-              download
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-300 dark:border-borderSubtle-dark text-slate-700 dark:text-slate-300 font-medium text-xs hover:border-brand-indigo dark:hover:border-brand-sky transition-colors"
-            >
-              <FaFileDownload className="text-brand-indigo dark:text-brand-sky" /> Download CV
-            </a>
+                  <span className="shrink-0 text-xs font-mono font-semibold text-slate-700 dark:text-slate-300 group-hover:text-slate-950 dark:group-hover:text-white inline-flex items-center gap-1.5 transition-colors">
+                    {channel.action}
+                  </span>
+                </a>
+              ))}
+            </div>
           </div>
 
         </div>

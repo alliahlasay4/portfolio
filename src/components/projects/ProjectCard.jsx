@@ -38,11 +38,11 @@ export default function ProjectCard({ project, onClick }) {
 
         {/* Tech Badges & CTA */}
         <div className="pt-3 border-t border-slate-100 dark:border-slate-800/60 flex items-center justify-between gap-2 min-w-0 max-w-full">
-          <div className="flex flex-wrap gap-1.5 min-w-0 max-w-[70%]">
+          <div className="flex flex-wrap gap-1.5 min-w-0 max-w-[65%]">
             {project.tech.slice(0, 3).map((tech, i) => (
               <span
                 key={i}
-                className="text-[11px] font-mono font-medium bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-300 px-2.5 py-1 rounded-md border border-slate-200 dark:border-slate-800 truncate"
+                className="text-[11px] font-mono font-medium bg-slate-100 dark:bg-canvas-dark text-slate-700 dark:text-slate-300 px-2.5 py-1 rounded-md border border-slate-200 dark:border-borderSubtle-dark truncate"
               >
                 {tech}
               </span>
@@ -54,9 +54,22 @@ export default function ProjectCard({ project, onClick }) {
             )}
           </div>
 
-          <span className="text-xs font-semibold text-brand-indigo dark:text-brand-sky group-hover:translate-x-0.5 transition-transform shrink-0">
-            View Details →
-          </span>
+          <div className="flex items-center gap-2 shrink-0">
+            {project.demo && (
+              <a
+                href={project.demo}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="text-xs font-semibold px-2.5 py-1 rounded-md bg-brand-indigo/10 dark:bg-brand-sky/10 text-brand-indigo dark:text-brand-sky hover:bg-brand-indigo hover:text-white dark:hover:bg-brand-sky dark:hover:text-white transition-colors"
+              >
+                Demo ↗
+              </a>
+            )}
+            <span className="text-xs font-semibold text-slate-600 dark:text-slate-400 group-hover:text-brand-indigo dark:group-hover:text-brand-sky transition-colors">
+              Details →
+            </span>
+          </div>
         </div>
       </div>
     </div>

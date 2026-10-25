@@ -18,11 +18,26 @@ export default function ProjectModal({ project, close, onPrev, onNext }) {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [close, onPrev, onNext]);
 
+  useEffect(() => {
+    if (project) {
+      document.body.style.overflow = "hidden";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [project]);
+
   if (!project) return null;
 
   return (
-    <div className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
-      <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 md:p-8 shadow-2xl relative animate-in fade-in duration-200">
+    <div
+      onClick={close}
+      className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6 overflow-y-auto"
+    >
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="bg-white dark:bg-surface-dark border border-slate-200 dark:border-borderSubtle-dark rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 md:p-8 shadow-2xl relative animate-in fade-in duration-200"
+      >
         
         {/* Close button */}
         <button
@@ -117,26 +132,26 @@ export default function ProjectModal({ project, close, onPrev, onNext }) {
           
           {/* Problem & Solution */}
           <div className="grid md:grid-cols-2 gap-4">
-            <div className="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800 space-y-1">
-              <h4 className="font-bold text-slate-900 dark:text-white text-xs uppercase tracking-wider text-red-500 dark:text-red-400">
+            <div className="p-4 rounded-xl bg-slate-50 dark:bg-canvas-dark border border-slate-200 dark:border-borderSubtle-dark space-y-1.5">
+              <h4 className="font-bold text-xs uppercase tracking-wider text-rose-600 dark:text-rose-400">
                 The Problem
               </h4>
-              <p className="leading-relaxed text-xs sm:text-sm">{project.problem}</p>
+              <p className="leading-relaxed text-xs sm:text-sm text-slate-700 dark:text-slate-300">{project.problem}</p>
             </div>
 
-            <div className="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800 space-y-1">
-              <h4 className="font-bold text-slate-900 dark:text-white text-xs uppercase tracking-wider text-emerald-500 dark:text-emerald-400">
+            <div className="p-4 rounded-xl bg-slate-50 dark:bg-canvas-dark border border-slate-200 dark:border-borderSubtle-dark space-y-1.5">
+              <h4 className="font-bold text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
                 The Solution
               </h4>
-              <p className="leading-relaxed text-xs sm:text-sm">{project.solution}</p>
+              <p className="leading-relaxed text-xs sm:text-sm text-slate-700 dark:text-slate-300">{project.solution}</p>
             </div>
           </div>
 
           {/* Key Features */}
           {project.features && (
             <div className="space-y-2">
-              <h4 className="font-bold text-slate-900 dark:text-white text-sm">Key Features</h4>
-              <ul className="list-disc pl-5 space-y-1 text-slate-600 dark:text-slate-300">
+              <h4 className="font-bold text-slate-900 dark:text-slate-100 text-sm">Key Features</h4>
+              <ul className="list-disc pl-5 space-y-1.5 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                 {project.features.map((f, i) => (
                   <li key={i}>{f}</li>
                 ))}
@@ -147,8 +162,8 @@ export default function ProjectModal({ project, close, onPrev, onNext }) {
           {/* Contributions */}
           {project.contributions && (
             <div className="space-y-2">
-              <h4 className="font-bold text-slate-900 dark:text-white text-sm">My Specific Contributions</h4>
-              <ul className="list-disc pl-5 space-y-1 text-slate-600 dark:text-slate-300">
+              <h4 className="font-bold text-slate-900 dark:text-slate-100 text-sm">Key Engineering Contributions</h4>
+              <ul className="list-disc pl-5 space-y-1.5 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                 {project.contributions.map((c, i) => (
                   <li key={i}>{c}</li>
                 ))}
@@ -157,11 +172,11 @@ export default function ProjectModal({ project, close, onPrev, onNext }) {
           )}
 
           {/* Tech Stack Badges */}
-          <div className="pt-2 border-t border-slate-200 dark:border-slate-800">
-            <h4 className="font-bold text-slate-900 dark:text-white text-xs uppercase tracking-wider mb-2">Technologies Used</h4>
+          <div className="pt-2 border-t border-slate-200 dark:border-borderSubtle-dark">
+            <h4 className="font-bold text-slate-900 dark:text-slate-100 text-xs uppercase tracking-wider mb-2 font-mono">Technologies Used</h4>
             <div className="flex flex-wrap gap-1.5">
               {project.tech.map((t, i) => (
-                <span key={i} className="text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 px-2.5 py-1 rounded-md border border-slate-200 dark:border-slate-700">
+                <span key={i} className="text-xs font-mono font-medium bg-slate-100 dark:bg-canvas-dark text-slate-800 dark:text-slate-200 px-2.5 py-1 rounded-md border border-slate-200 dark:border-borderSubtle-dark">
                   {t}
                 </span>
               ))}
