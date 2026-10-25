@@ -19,8 +19,8 @@ export default function Certifications() {
     },
     planned: {
       label: "Planned Roadmap",
-      icon: <FaCalendarAlt className="text-brand-indigo dark:text-brand-cyan" />,
-      color: "bg-brand-indigo/10 text-brand-indigo dark:text-brand-cyan border-brand-indigo/20"
+      icon: <FaCalendarAlt className="text-brand-indigo dark:text-brand-sky" />,
+      color: "bg-brand-indigo/10 text-brand-indigo dark:text-brand-sky border-brand-indigo/20"
     }
   };
 
@@ -42,7 +42,7 @@ export default function Certifications() {
         {/* Asymmetric Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
-            <p className="text-xs font-mono font-bold uppercase tracking-wider text-brand-indigo dark:text-brand-cyan mb-1">
+            <p className="text-xs font-mono font-bold uppercase tracking-wider text-brand-indigo dark:text-brand-sky mb-1">
               Verified Technical Credentials
             </p>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-slate-50">
@@ -96,7 +96,7 @@ export default function Certifications() {
               >
                 <div className="space-y-3">
                   <div className="flex items-start justify-between gap-2">
-                    <span className="p-2.5 rounded-lg bg-slate-100 dark:bg-slate-900 text-brand-indigo dark:text-brand-cyan text-base">
+                    <span className="p-2.5 rounded-lg bg-slate-100 dark:bg-slate-900 text-brand-indigo dark:text-brand-sky text-base">
                       <FaCertificate />
                     </span>
 
@@ -112,7 +112,7 @@ export default function Certifications() {
                     <h3 className="font-bold text-base text-slate-900 dark:text-slate-100">
                       {item.title}
                     </h3>
-                    <p className="text-xs font-mono text-brand-indigo dark:text-brand-cyan font-medium mt-1">
+                    <p className="text-xs font-mono text-brand-indigo dark:text-brand-sky font-medium mt-1">
                       {item.issuer}
                     </p>
                   </div>
@@ -125,7 +125,7 @@ export default function Certifications() {
                 <div className="pt-3 border-t border-slate-100 dark:border-slate-800/60 flex items-center justify-between text-xs font-mono text-slate-500 dark:text-slate-400">
                   <span>Issued / Term: {item.date}</span>
                   {item.badge && (
-                    <span className="text-xs font-semibold text-brand-indigo dark:text-brand-cyan flex items-center gap-1">
+                    <span className="text-xs font-semibold text-brand-indigo dark:text-brand-sky flex items-center gap-1">
                       <FaMedal /> Cisco Badge
                     </span>
                   )}
@@ -162,7 +162,7 @@ export default function Certifications() {
                       {honor.period}
                     </span>
                   </div>
-                  <p className="text-xs font-mono text-brand-indigo dark:text-brand-cyan font-medium">{honor.organization}</p>
+                  <p className="text-xs font-mono text-brand-indigo dark:text-brand-sky font-medium">{honor.organization}</p>
                   <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed pt-1">{honor.description}</p>
                 </div>
               </div>

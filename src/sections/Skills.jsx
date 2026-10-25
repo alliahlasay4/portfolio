@@ -5,7 +5,7 @@ export default function Skills() {
   const { skills } = portfolioData;
 
   const categoryIcons = {
-    Frontend: <FaCode className="text-brand-blue" />,
+    Frontend: <FaCode className="text-brand-sky" />,
     Backend: <FaServer className="text-brand-indigo" />,
     Programming: <FaLaptopCode className="text-emerald-500" />,
     "Tools & Workflow": <FaTools className="text-amber-500" />
@@ -18,7 +18,7 @@ export default function Skills() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="max-w-3xl mb-12">
-          <p className="text-xs font-bold uppercase tracking-wider text-brand-blue mb-1">
+          <p className="text-xs font-bold uppercase tracking-wider text-brand-sky mb-1">
             Technical Proficiency
           </p>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
@@ -57,9 +57,9 @@ export default function Skills() {
         </div>
 
         {/* Currently Upskilling Highlight Box */}
-        <div className="p-6 rounded-2xl bg-gradient-to-r from-brand-blue/10 via-brand-indigo/10 to-brand-cyan/10 border border-brand-blue/20 dark:border-brand-blue/30 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div className="p-6 rounded-2xl bg-gradient-to-r from-brand-sky/10 via-brand-indigo/10 to-brand-sky/10 border border-brand-sky/20 dark:border-brand-sky/30 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div className="flex items-center gap-4">
-            <div className="p-3 rounded-xl bg-brand-blue text-white text-xl">
+            <div className="p-3 rounded-xl bg-brand-sky text-white text-xl">
               <FaGraduationCap />
             </div>
             <div>
@@ -76,9 +76,9 @@ export default function Skills() {
             {skills.currentlyLearning.map((item, index) => (
               <span
                 key={index}
-                className="text-xs font-semibold px-3 py-1.5 rounded-lg bg-white dark:bg-slate-900 text-brand-blue border border-brand-blue/30 shadow-sm"
+                className="text-xs font-semibold px-3 py-1.5 rounded-lg bg-white dark:bg-slate-900 text-brand-sky border border-brand-sky/30 shadow-sm"
               >
-                ⚡ {item}
+                {item}
               </span>
             ))}
           </div>

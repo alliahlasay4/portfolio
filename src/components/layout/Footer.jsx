@@ -25,7 +25,7 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
-            className="hover:text-brand-blue dark:hover:text-brand-blue transition-colors duration-200 text-lg"
+            className="hover:text-brand-sky dark:hover:text-brand-sky transition-colors duration-200 text-lg"
           >
             <FaGithub />
           </a>
@@ -34,14 +34,14 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
-            className="hover:text-brand-blue dark:hover:text-brand-blue transition-colors duration-200 text-lg"
+            className="hover:text-brand-sky dark:hover:text-brand-sky transition-colors duration-200 text-lg"
           >
             <FaLinkedin />
           </a>
           <a
             href={`mailto:${portfolioData.personal.email}`}
             aria-label="Email"
-            className="hover:text-brand-blue dark:hover:text-brand-blue transition-colors duration-200 text-lg"
+            className="hover:text-brand-sky dark:hover:text-brand-sky transition-colors duration-200 text-lg"
           >
             <FaEnvelope />
           </a>

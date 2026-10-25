@@ -1,24 +1,22 @@
 import Navbar from "../components/layout/Navbar";
 import Hero from "../sections/Hero";
-import About from "../sections/About";
-import Skills from "../sections/Skills";
-import Certifications from "../sections/Certifications";
 import Projects from "../sections/Projects";
 import Experience from "../sections/Experience";
+import Skills from "../sections/Skills";
+import Certifications from "../sections/Certifications";
 import Contact from "../sections/Contact";
 import Footer from "../components/layout/Footer";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-200">
+    <div className="min-h-screen bg-canvas-light text-slate-900 dark:bg-canvas-dark dark:text-slate-100 transition-colors duration-200">
       <Navbar />
       <main>
         <Hero />
-        <About />
-        <Skills />
-        <Certifications />
         <Projects />
         <Experience />
+        <Skills />
+        <Certifications />
         <Contact />
       </main>
       <Footer />

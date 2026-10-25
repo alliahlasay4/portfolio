@@ -1,16 +1,39 @@
-# React + Vite
+# Alliah Cassandra Lasay — Frontend Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Modern, performant, and responsive developer portfolio built with React 19, Vite, and Tailwind CSS.
 
-Currently, two official plugins are available:
+## 🚀 Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Core:** [React 19](https://react.dev/), JavaScript (ES6+)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **Icons:** [React Icons](https://react-icons.github.io/react-icons/)
+- **Build Tool:** [Vite](https://vitejs.dev/)
 
-## React Compiler
+## 📁 Key Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Progressive Architecture:** Case-study driven flow prioritizing live engineering deliverables (`Hero → Projects → Experience → Skills → Certifications → Contact`).
+- **Design System:** Tailored dual-theme system (dark/light) with smooth color transitions and typography tokens (Plus Jakarta Sans & JetBrains Mono).
+- **Interactive Case Studies:** Modal breakdowns with problem-solution mapping, tech stacks, and source links.
+- **Direct Engagement:** One-click email copying, resume download, and quick communication channels.
 
-## Expanding the ESLint configuration
+## 🛠️ Local Development
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 1. Install Dependencies
+```bash
+npm install
+```
+
+### 2. Start Dev Server
+```bash
+npm run dev
+```
+
+### 3. Build for Production
+```bash
+npm run build
+```
+
+### 4. Preview Production Build
+```bash
+npm run preview
+```

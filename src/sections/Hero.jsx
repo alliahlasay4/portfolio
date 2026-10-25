@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaGithub, FaLinkedin, FaEnvelope, FaFileDownload, FaArrowRight, FaCode, FaCheckCircle, FaGraduationCap } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope, FaFileDownload, FaArrowRight, FaCode, FaGraduationCap } from "react-icons/fa";
 import { portfolioData } from "../data/portfolioData";
 import meImg from "../assets/lasay_2x2.jpg";
 
@@ -205,25 +205,6 @@ export default function Hero() {
                 </span>
               </div>
 
-            </div>
-          </div>
-
-          {/* Quick Highlight Cards Bar */}
-          <div className="grid grid-cols-2 gap-3 text-xs font-mono w-full max-w-full">
-            <div className="p-3 rounded-xl bg-white/90 dark:bg-surface-dark/90 backdrop-blur-md border border-slate-200 dark:border-borderSubtle-dark flex items-center gap-2.5 shadow-sm min-w-0">
-              <FaCheckCircle className="text-emerald-500 shrink-0" />
-              <div className="min-w-0">
-                <p className="font-bold text-slate-900 dark:text-slate-100 truncate">Supsoft Tech</p>
-                <p className="text-[10px] text-slate-500 dark:text-slate-400 truncate">Frontend Intern</p>
-              </div>
-            </div>
-
-            <div className="p-3 rounded-xl bg-white/90 dark:bg-surface-dark/90 backdrop-blur-md border border-slate-200 dark:border-borderSubtle-dark flex items-center gap-2.5 shadow-sm min-w-0">
-              <FaCheckCircle className="text-brand-sky shrink-0" />
-              <div className="min-w-0">
-                <p className="font-bold text-slate-900 dark:text-slate-100 truncate">DLSU-D IT</p>
-                <p className="text-[10px] text-slate-500 dark:text-slate-400 truncate">DOST Scholar</p>
-              </div>
             </div>
           </div>
 

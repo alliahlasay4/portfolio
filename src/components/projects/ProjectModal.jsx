@@ -83,7 +83,7 @@ export default function ProjectModal({ project, close, onPrev, onNext }) {
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-lg bg-slate-900 text-white dark:bg-slate-800 dark:text-slate-100 hover:bg-brand-blue dark:hover:bg-brand-blue transition-colors duration-200"
+                  className="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-lg bg-slate-900 text-white dark:bg-slate-800 dark:text-slate-100 hover:bg-brand-sky dark:hover:bg-brand-sky transition-colors duration-200"
                 >
                   <FaGithub /> Source Code
                 </a>
@@ -93,7 +93,7 @@ export default function ProjectModal({ project, close, onPrev, onNext }) {
                   href={project.demo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-lg bg-brand-blue text-white hover:bg-brand-indigo transition-colors duration-200"
+                  className="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-lg bg-brand-sky text-white hover:bg-brand-indigo transition-colors duration-200"
                 >
                   <FaExternalLinkAlt /> Live Demo
                 </a>
@@ -102,7 +102,7 @@ export default function ProjectModal({ project, close, onPrev, onNext }) {
           </div>
 
           <div className="flex items-center gap-3 text-xs font-medium text-slate-500 dark:text-slate-400">
-            <span className="text-brand-blue font-semibold">{project.role}</span>
+            <span className="text-brand-sky font-semibold">{project.role}</span>
             <span>•</span>
             <span>{project.date}</span>
             <span>•</span>
@@ -174,13 +174,13 @@ export default function ProjectModal({ project, close, onPrev, onNext }) {
         <div className="flex justify-between items-center pt-6 mt-6 border-t border-slate-200 dark:border-slate-800">
           <button
             onClick={onPrev}
-            className="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-brand-blue dark:hover:text-brand-blue transition-colors flex items-center gap-1.5"
+            className="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-brand-sky dark:hover:text-brand-sky transition-colors flex items-center gap-1.5"
           >
             ← Previous Project
           </button>
           <button
             onClick={onNext}
-            className="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-brand-blue dark:hover:text-brand-blue transition-colors flex items-center gap-1.5"
+            className="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-brand-sky dark:hover:text-brand-sky transition-colors flex items-center gap-1.5"
           >
             Next Project →
           </button>
