@@ -3,12 +3,12 @@ export const portfolioData = {
     name: "Alliah Cassandra B. Lasay",
     role: "Frontend Developer",
     subtitle: "Building responsive, tested web applications with React, TypeScript & modern web tech",
-    bioShort: "Information Technology graduate focused on building responsive, tested web applications with React, TypeScript, JavaScript, and Tailwind CSS. Experienced in turning Figma designs into reusable UI components, managing client-side state and routing, and writing automated unit and end-to-end tests.",
+    bioShort: "Information Technology graduate focused on building responsive, tested web applications with React, TypeScript, JavaScript, and Tailwind CSS. Experienced in turning Figma designs into reusable UI components, managing client-side state and routing, and using AI-assisted workflows and prompt engineering to accelerate feature delivery, debugging, and automated testing.",
     bioLong: [
-      "I am an Information Technology graduate with a specialization in Web Development from De La Salle University – Dasmariñas. My focus centers on frontend engineering — building responsive, tested, and intuitive user interfaces using modern web technologies like React, TypeScript, JavaScript, and Tailwind CSS.",
-      "As a Frontend Developer Intern at Supsoft Tech, I built the intern-facing web portal for an internal internship management system from Figma designs, implementing daily attendance tracking, document submission forms, light/dark mode theming, and monthly PDF report exports using jsPDF.",
-      "I have architected full-fledged web applications including Taktic (an offline-first habit & focus PWA with Supabase and background audio) and Lumina (an AI-powered movie discovery PWA with Google Gemini, TMDB, and comprehensive test suites).",
-      "I am committed to engineering rigor with automated testing using Vitest, React Testing Library, and Playwright, and holding verified credentials in JavaScript, HTML, and AI engineering."
+      "I am an Information Technology graduate with a specialization in Web Development from De La Salle University – Dasmariñas. My focus centers on frontend engineering — building responsive, well-tested, and intuitive user interfaces using modern web technologies like React, TypeScript, JavaScript, and Tailwind CSS.",
+      "As a Frontend Developer Intern at Supsoft Tech, I built the intern-facing web portal for an internal internship management system from Figma designs, implementing daily attendance tracking, document submission forms, light/dark mode theming, and monthly PDF report exports using jsPDF, while utilizing AI-assisted debugging to quickly triage and resolve frontend issues across testing cycles.",
+      "I have built complete web applications including Taktic (an offline-first habit & focus PWA with Supabase and background audio) and Lumina (an AI-powered movie discovery PWA with Google Gemini, TMDB, and comprehensive test suites).",
+      "I prioritize code reliability through automated testing using Vitest, React Testing Library, and Playwright, backed by verified credentials in JavaScript, HTML, and AI engineering (Prompt Like an Engineer, Modern AI)."
     ],
     email: "alliahlasay4@gmail.com",
     phone: "0928 - 659 - 3680",
@@ -21,15 +21,15 @@ export const portfolioData = {
 
   upskillingNotice: {
     title: "Core Specialization",
-    highlight: "React, TypeScript, Testing (Vitest & Playwright) & Supabase",
+    highlight: "React, TypeScript, Testing (Vitest & Playwright), AI Workflows & Supabase",
     description: "Building production-grade, tested, responsive web applications and PWAs."
   },
 
   skills: {
     Frontend: ["React", "TypeScript", "JavaScript", "HTML5", "CSS3", "Tailwind CSS", "Bootstrap"],
-    "Testing & Tools": ["Vite", "Vitest", "React Testing Library", "Playwright", "Git", "GitHub", "Vercel"],
+    "Testing & AI Workflow": ["Vite", "Vitest", "React Testing Library", "Playwright", "Prompt Engineering", "AI-Assisted Debugging & Testing"],
     "Backend & DB": ["Supabase", "PostgreSQL"],
-    "Design & Workflow": ["Figma", "ClickUp", "Adobe Photoshop", "Canva"],
+    "Tools & Design": ["Git", "GitHub", "Vercel", "Figma", "ClickUp", "Adobe Photoshop", "Canva"],
     currentlyLearning: ["Advanced TypeScript", "Full-Stack System Architecture", "Cloud Integrations"]
   },
 
@@ -44,7 +44,7 @@ export const portfolioData = {
       points: [
         "Implemented core features including daily attendance tracking (time-in/out, rendered hours calculation), document submission forms, and light/dark mode theming.",
         "Handled client-side routing, state management, form validation, and downloadable monthly PDF report exports using jsPDF.",
-        "Worked with UI/UX designers, QA, and backend teammates in ClickUp to triage and fix frontend bugs across testing cycles."
+        "Worked with UI/UX designers, QA, and backend teammates in ClickUp, using AI-assisted debugging to quickly triage and fix frontend issues across testing cycles."
       ],
       tech: ["React", "JavaScript", "Tailwind CSS", "jsPDF", "Figma", "ClickUp", "Git"]
     }
@@ -97,7 +97,7 @@ export const portfolioData = {
         {
           title: "TOEIC Certificate",
           issuer: "Hopkins International Partners, Inc.",
-          date: "2024 – 2026",
+          date: "2026 – 2028",
           status: "completed",
           badge: false,
           description: "International standardized test of English language proficiency for global communication."
@@ -193,22 +193,22 @@ export const portfolioData = {
       category: "React / Frontend",
       featured: true,
       problem: "Traditional productivity tools either lack offline reliability, separate habits from daily schedules, or fail to keep users engaged and accountable over long focus periods.",
-      solution: "Engineered an installable Progressive Web App (PWA) with offline queuing, ambient audio synthesis, shared Circles with Row-Level Security, and rigorous automated tests.",
+      solution: "Built an installable Progressive Web App (PWA) with offline queuing, ambient audio synthesis, shared Circles with Row-Level Security, and automated test suites.",
       features: [
         "Installable PWA for daily planning, habit tracking, and focus timers",
         "Custom SVG progress rings and Web Audio API background sound generation",
         "Offline-first sync queue saving tasks, habits, and focus logs with automatic Supabase sync",
         "Shared accountability 'Circles' with live activity feeds and friend invites via PostgreSQL & RLS",
-        "Automated unit, integration, and E2E test suites with Vitest and Playwright"
+        "AI-assisted automated test suites with Vitest and Playwright covering sync and date logic"
       ],
       contributions: [
-        "Architected an offline queue storing local changes for instant optimistic UI updates",
-        "Implemented custom SVG progress rings and synthesized background ambient focus audio using Web Audio API",
-        "Engineered shared accountability Circles utilizing PostgreSQL functions and Supabase Row-Level Security",
-        "Wrote automated unit and end-to-end tests using Vitest and Playwright to guarantee sync and date logic"
+        "Built an offline queue storing local changes for instant optimistic UI updates",
+        "Implemented custom SVG progress rings and background ambient focus audio using Web Audio API",
+        "Developed shared accountability Circles using PostgreSQL functions and Supabase Row-Level Security",
+        "Used AI-assisted testing workflows to write Vitest and Playwright suites covering core date logic, offline-to-online syncing, and critical user flows"
       ],
       role: "Frontend Developer",
-      date: "2025 – 2026",
+      date: "2026",
       tech: ["React", "TypeScript", "Tailwind CSS", "Supabase", "Vite", "Vitest", "Playwright"],
       github: "https://github.com/alliahlasay4/taktic",
       demo: "https://taktic-puce.vercel.app/",
@@ -225,17 +225,17 @@ export const portfolioData = {
       solution: "Built a responsive, offline-capable movie discovery PWA integrating TMDB, multi-source ratings (IMDb, Rotten Tomatoes, Metacritic), Google Gemini AI search, and prefetching.",
       features: [
         "Aggregated TMDB metadata, regional streaming availability, and ratings (IMDb, Rotten Tomatoes, Metacritic)",
-        "Google Gemini search assistant for natural language movie recommendations by mood or plot",
+        "Google Gemini search assistant using structured prompt engineering to recommend movies by mood or plot",
         "Offline resilience with rate-limit fallbacks and service worker caching",
         "Performance optimizations with in-memory API caching, card hover prefetching, and lazy routes",
         "Role-protected admin dashboard and cross-tab state syncing",
-        "Automated unit and integration test coverage with Vitest and React Testing Library"
+        "AI-assisted automated test suites with Vitest and React Testing Library"
       ],
       contributions: [
-        "Integrated Google Gemini API with conversational fallback mechanisms for mood and plot-based queries",
+        "Integrated Google Gemini search assistant using structured prompt engineering for mood/plot recommendations with offline & rate-limit fallbacks",
         "Implemented high-performance card hover prefetching and in-memory caching to minimize API latency",
-        "Constructed role-protected routes, admin controls, and broadcast-channel cross-tab state synchronization",
-        "Authored comprehensive test suites using Vitest and React Testing Library for core search and auth flows"
+        "Built role-protected routes, admin controls, and broadcast-channel cross-tab state synchronization",
+        "Wrote AI-assisted test suites using Vitest and React Testing Library for core search and auth flows"
       ],
       role: "Frontend Developer",
       date: "2026",

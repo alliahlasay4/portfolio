@@ -12,9 +12,9 @@ export default function Skills() {
     },
     {
       index: "02",
-      name: "Testing & Quality Assurance",
-      key: "Testing & Tools",
-      note: "Automated unit, integration, and end-to-end testing with Vitest, Testing Library, and Playwright."
+      name: "Testing & AI Workflow",
+      key: "Testing & AI Workflow",
+      note: "Automated test suites (Vitest, RTL, Playwright), structured prompt engineering, and AI-assisted debugging."
     },
     {
       index: "03",
@@ -24,9 +24,9 @@ export default function Skills() {
     },
     {
       index: "04",
-      name: "Design Systems & Workflow",
-      key: "Design & Workflow",
-      note: "Translating Figma design tokens into production code, agile sprint management in ClickUp, and version control."
+      name: "Tools & Design Systems",
+      key: "Tools & Design",
+      note: "Translating Figma design tokens into production code, agile sprint management in ClickUp, and Git version control."
     }
   ];
 
@@ -38,7 +38,7 @@ export default function Skills() {
         <div className="pb-5 border-b border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row sm:items-end justify-between gap-3">
           <div>
             <span className="text-xs font-mono font-medium tracking-wider uppercase text-slate-500 dark:text-slate-400 block mb-1">
-              03 / Technical Matrix
+              03 / Technical Skills
             </span>
             <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100">
               Skills & Tooling

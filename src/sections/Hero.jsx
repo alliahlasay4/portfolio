@@ -23,7 +23,7 @@ export default function Hero() {
             </div>
             <div className="min-w-0">
               <span className="text-xs font-mono font-medium tracking-wider uppercase text-slate-500 dark:text-slate-400 block">
-                Portfolio & Engineering Dossier
+                Frontend Developer Portfolio
               </span>
               <h2 className="text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100 truncate">
                 {personal.name}
@@ -34,15 +34,12 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Availability & Target Roles */}
-          <div className="md:col-span-6 md:text-right flex flex-col md:items-end justify-center">
-            <div className="inline-flex items-center gap-2 text-xs font-mono font-medium text-slate-800 dark:text-slate-200">
-              <span className="w-2 h-2 rounded-full bg-emerald-500" />
+          {/* Availability Status */}
+          <div className="md:col-span-6 md:text-right flex items-center md:justify-end">
+            <div className="inline-flex items-center gap-2 text-xs font-mono font-medium px-3 py-1.5 rounded-full border border-slate-200 dark:border-slate-800 bg-slate-50/60 dark:bg-slate-900/60 text-slate-800 dark:text-slate-200 shadow-sm">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
               <span>Available for Tech Opportunities</span>
             </div>
-            <p className="text-xs font-mono text-slate-500 dark:text-slate-400 mt-1 max-w-sm">
-              {upskillingNotice.highlight}
-            </p>
           </div>
         </div>
 
@@ -50,7 +47,7 @@ export default function Hero() {
         <div className="py-10 sm:py-14 border-b border-slate-200 dark:border-slate-800">
           <div className="max-w-4xl">
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100 leading-[1.12]">
-              Frontend Developer building responsive, tested, and reliable web applications.
+              Building responsive, tested, and reliable web applications.
             </h1>
             <p className="mt-6 text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed font-normal">
               {personal.bioShort}
@@ -131,13 +128,13 @@ export default function Hero() {
           {/* Column 2: Verification & Testing */}
           <div className="py-6 md:py-0 md:px-6">
             <span className="text-[11px] font-mono tracking-wider uppercase text-slate-400 dark:text-slate-500 block mb-2 font-semibold">
-              02 / Testing & Rigor
+              02 / Testing & AI Workflows
             </span>
             <p className="text-sm font-semibold text-slate-800 dark:text-slate-200">
-              Vitest, React Testing Library, Playwright
+              Vitest, Playwright & Prompt Engineering
             </p>
             <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
-              Automated unit, integration, and end-to-end frontend test coverage.
+              Automated testing suites and AI-assisted workflows for efficient development and debugging.
             </p>
           </div>
 
