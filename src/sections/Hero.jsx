@@ -1,6 +1,6 @@
 import { FaGithub, FaLinkedin, FaEnvelope, FaFileDownload, FaArrowRight, FaGraduationCap } from "react-icons/fa";
 import { portfolioData } from "../data/portfolioData";
-import meImg from "../assets/lasay_2x2.jpg";
+import meImg from "../assets/lasay_2x2-enahnced.jpg";
 
 export default function Hero() {
   const { personal, upskillingNotice } = portfolioData;
