@@ -60,24 +60,33 @@ export default function ProjectModal({ project, close, onPrev, onNext }) {
             }}
           />
 
+          {/* Slide counter pill */}
+          {project.images?.length > 1 && (
+            <div className="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-slate-900/80 backdrop-blur-sm text-[11px] font-mono text-white font-medium border border-white/10 z-10">
+              {activeImgIndex + 1} / {project.images.length}
+            </div>
+          )}
+
           {project.images?.length > 1 && (
             <div className="absolute inset-y-0 left-0 right-0 flex items-center justify-between px-3 pointer-events-none">
               <button
+                type="button"
                 onClick={(e) => {
                   e.stopPropagation();
                   setActiveImgIndex((prev) => (prev === 0 ? project.images.length - 1 : prev - 1));
                 }}
-                className="pointer-events-auto p-2 rounded-full bg-slate-900/60 text-white hover:bg-slate-900 transition-colors"
+                className="pointer-events-auto p-2 rounded-full bg-slate-900/70 text-white hover:bg-slate-900 transition-colors shadow-md"
                 aria-label="Previous image"
               >
                 <FaChevronLeft className="text-sm" />
               </button>
               <button
+                type="button"
                 onClick={(e) => {
                   e.stopPropagation();
                   setActiveImgIndex((prev) => (prev === project.images.length - 1 ? 0 : prev + 1));
                 }}
-                className="pointer-events-auto p-2 rounded-full bg-slate-900/60 text-white hover:bg-slate-900 transition-colors"
+                className="pointer-events-auto p-2 rounded-full bg-slate-900/70 text-white hover:bg-slate-900 transition-colors shadow-md"
                 aria-label="Next image"
               >
                 <FaChevronRight className="text-sm" />
@@ -85,6 +94,32 @@ export default function ProjectModal({ project, close, onPrev, onNext }) {
             </div>
           )}
         </div>
+
+        {/* Thumbnail Navigation Strip */}
+        {project.images?.length > 1 && (
+          <div className="flex items-center gap-2 overflow-x-auto pb-2 -mt-3 mb-6 scrollbar-thin">
+            {project.images.map((img, idx) => (
+              <button
+                key={idx}
+                type="button"
+                onClick={() => setActiveImgIndex(idx)}
+                className={`relative flex-shrink-0 w-16 h-10 rounded-md overflow-hidden border-2 transition-all duration-150 ${
+                  activeImgIndex === idx
+                    ? "border-brand-sky scale-105 shadow-sm opacity-100"
+                    : "border-transparent opacity-60 hover:opacity-90"
+                }`}
+                aria-label={`Jump to slide ${idx + 1}`}
+              >
+                <img
+                  src={img}
+                  alt={`Thumbnail ${idx + 1}`}
+                  className="w-full h-full object-cover object-top"
+                  loading="lazy"
+                />
+              </button>
+            ))}
+          </div>
+        )}
 
         {/* Header Info */}
         <div className="space-y-2 mb-6">

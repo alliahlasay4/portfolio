@@ -213,7 +213,17 @@ export const portfolioData = {
       github: "https://github.com/alliahlasay4/taktic",
       demo: "https://taktic-puce.vercel.app/",
       images: [
-        "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=1200&q=80"
+        "/screenshots/taktic-1.jpg",
+        "/screenshots/taktic-2.jpg",
+        "/screenshots/taktic-3.jpg",
+        "/screenshots/taktic-4.jpg",
+        "/screenshots/taktic-5.jpg",
+        "/screenshots/taktic-6.jpg",
+        "/screenshots/taktic-7.jpg",
+        "/screenshots/taktic-8.jpg",
+        "/screenshots/taktic-9.jpg",
+        "/screenshots/taktic-10.jpg",
+        "/screenshots/taktic-11.jpg"
       ]
     },
     {
@@ -243,7 +253,17 @@ export const portfolioData = {
       github: "https://github.com/alliahlasay4/movie-system",
       demo: "https://movie-system-ten.vercel.app/",
       images: [
-        "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1200&q=80"
+        "/screenshots/lumina-1.jpg",
+        "/screenshots/lumina-2.jpg",
+        "/screenshots/lumina-3.jpg",
+        "/screenshots/lumina-4.jpg",
+        "/screenshots/lumina-5.jpg",
+        "/screenshots/lumina-6.jpg",
+        "/screenshots/lumina-7.jpg",
+        "/screenshots/lumina-8.jpg",
+        "/screenshots/lumina-9.jpg",
+        "/screenshots/lumina-10.jpg",
+        "/screenshots/lumina-11.jpg"
       ]
     },
     {
@@ -270,10 +290,14 @@ export const portfolioData = {
       github: "https://github.com/alliahlasay4/inturn",
       demo: "",
       images: [
-        "/projects/intern-system-1.png",
-        "/projects/intern-system-2.png",
-        "/projects/intern-system-3.png",
-        "/projects/intern-system-4.png"
+        "/screenshots/inturn-1.jpg",
+        "/screenshots/inturn-2.jpg",
+        "/screenshots/inturn-3.jpg",
+        "/screenshots/inturn-4.jpg",
+        "/screenshots/inturn-5.jpg",
+        "/screenshots/inturn-6.jpg",
+        "/screenshots/inturn-7.jpg",
+        "/screenshots/inturn-8.jpg"
       ]
     }
   ]
