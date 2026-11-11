@@ -2,6 +2,7 @@ import { useState } from "react";
 import { FaGithub, FaExternalLinkAlt, FaArrowRight } from "react-icons/fa";
 import { portfolioData } from "../data/portfolioData";
 import ProjectModal from "../components/projects/ProjectModal";
+import { Reveal } from "../components/common/Reveal";
 
 export default function Projects() {
   const { projects } = portfolioData;
@@ -25,19 +26,21 @@ export default function Projects() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         
         {/* Section Header */}
-        <div className="pb-5 border-b border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row sm:items-end justify-between gap-3">
-          <div>
-            <span className="text-xs font-mono font-medium tracking-wider uppercase text-slate-500 dark:text-slate-400 block mb-1">
-              01 / Featured Projects
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100">
-              Featured Projects
-            </h2>
+        <Reveal>
+          <div className="pb-5 border-b border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row sm:items-end justify-between gap-3">
+            <div>
+              <span className="text-xs font-mono font-medium tracking-wider uppercase text-slate-500 dark:text-slate-400 block mb-1">
+                01 / Featured Projects
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100">
+                Featured Projects
+              </h2>
+            </div>
+            <p className="text-xs sm:text-sm font-mono text-slate-500 dark:text-slate-400">
+              Selected applications & production codebases
+            </p>
           </div>
-          <p className="text-xs sm:text-sm font-mono text-slate-500 dark:text-slate-400">
-            Selected applications & production codebases
-          </p>
-        </div>
+        </Reveal>
 
         {/* Project Ledger Rows */}
         <div className="divide-y divide-slate-200 dark:divide-slate-800">
@@ -45,10 +48,10 @@ export default function Projects() {
             const indexStr = String(index + 1).padStart(2, "0");
 
             return (
-              <article
-                key={project.id}
-                className="py-8 sm:py-10 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start"
-              >
+              <Reveal key={project.id} delay={index * 0.05} y={20}>
+                <article
+                  className="py-8 sm:py-10 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start"
+                >
                 {/* Left Column: Image Preview + Direct Links */}
                 <div className="lg:col-span-5 space-y-4">
                   <div
@@ -115,39 +118,20 @@ export default function Projects() {
                     <span>{project.date}</span>
                   </div>
 
-                  {/* Title & Role */}
+                  {/* Title & Scope */}
                   <div>
                     <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-slate-100 tracking-tight">
                       {project.title}
                     </h3>
                     <p className="text-xs font-mono text-slate-500 dark:text-slate-400 mt-0.5">
-                      Role: {project.role}
+                      {project.role}
                     </p>
                   </div>
 
-                  {/* Problem & Solution Paragraph */}
+                  {/* Summary Paragraph */}
                   <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
-                    {project.solution || project.problem}
+                    {project.summary}
                   </p>
-
-                  {/* Key Engineering Highlights */}
-                  {project.features && (
-                    <div className="space-y-1.5 pt-1">
-                      <span className="text-[11px] font-mono uppercase tracking-wider text-slate-400 dark:text-slate-500 font-semibold block">
-                        Core Architecture & Highlights
-                      </span>
-                      <ul className="space-y-1 text-xs text-slate-600 dark:text-slate-300">
-                        {project.features.slice(0, 3).map((feat, i) => (
-                          <li key={i} className="flex items-start gap-2">
-                            <span className="text-slate-400 dark:text-slate-500 select-none font-mono">
-                              —
-                            </span>
-                            <span className="leading-relaxed">{feat}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
 
                   {/* Tech Stack Flat Tags */}
                   <div className="pt-2">
@@ -163,7 +147,8 @@ export default function Projects() {
                     </div>
                   </div>
                 </div>
-              </article>
+                </article>
+              </Reveal>
             );
           })}
         </div>
@@ -171,14 +156,12 @@ export default function Projects() {
       </div>
 
       {/* Case Study Modal */}
-      {selectedProject && (
-        <ProjectModal
-          project={selectedProject}
-          close={() => setSelectedProjectId(null)}
-          onPrev={handlePrev}
-          onNext={handleNext}
-        />
-      )}
+      <ProjectModal
+        project={selectedProject}
+        close={() => setSelectedProjectId(null)}
+        onPrev={handlePrev}
+        onNext={handleNext}
+      />
     </section>
   );
 }

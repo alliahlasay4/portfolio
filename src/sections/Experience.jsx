@@ -1,4 +1,5 @@
 import { portfolioData } from "../data/portfolioData";
+import { Reveal, StaggerGroup, StaggerItem } from "../components/common/Reveal";
 
 export default function Experience() {
   const { experience } = portfolioData;
@@ -30,19 +31,21 @@ export default function Experience() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         
         {/* Section Header */}
-        <div className="pb-5 border-b border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row sm:items-end justify-between gap-3">
-          <div>
-            <span className="text-xs font-mono font-medium tracking-wider uppercase text-slate-500 dark:text-slate-400 block mb-1">
-              02 / Background
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100">
-              Experience & Education
-            </h2>
+        <Reveal>
+          <div className="pb-5 border-b border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row sm:items-end justify-between gap-3">
+            <div>
+              <span className="text-xs font-mono font-medium tracking-wider uppercase text-slate-500 dark:text-slate-400 block mb-1">
+                02 / Background
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100">
+                Experience & Education
+              </h2>
+            </div>
+            <p className="text-xs sm:text-sm font-mono text-slate-500 dark:text-slate-400">
+              Professional history and academic credentials
+            </p>
           </div>
-          <p className="text-xs sm:text-sm font-mono text-slate-500 dark:text-slate-400">
-            Professional history and academic credentials
-          </p>
-        </div>
+        </Reveal>
 
         {/* 2-Column Split: Work History (Left) & Education/Honors (Right) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 pt-8 items-start">
@@ -54,7 +57,7 @@ export default function Experience() {
             </span>
 
             {experience.map((job, index) => (
-              <div key={index} className="space-y-4">
+              <Reveal key={index} delay={index * 0.08} className="space-y-4">
                 {/* Job Header */}
                 <div className="space-y-1 border-b border-slate-200/60 dark:border-slate-800/60 pb-3">
                   <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
@@ -103,7 +106,7 @@ export default function Experience() {
                     </span>
                   ))}
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
 
@@ -113,9 +116,9 @@ export default function Experience() {
               Education & Academic Honors
             </span>
 
-            <div className="divide-y divide-slate-200 dark:divide-slate-800">
+            <StaggerGroup stagger={0.08} className="divide-y divide-slate-200 dark:divide-slate-800">
               {educationAndHonors.map((item, index) => (
-                <div key={index} className="py-5 first:pt-0 last:pb-0 space-y-1.5">
+                <StaggerItem key={index} className="py-5 first:pt-0 last:pb-0 space-y-1.5">
                   <div className="flex items-baseline justify-between gap-2">
                     <span className="text-[11px] font-mono text-slate-400 dark:text-slate-500">
                       {item.index} / {item.period}
@@ -135,9 +138,9 @@ export default function Experience() {
                       {item.detail}
                     </p>
                   )}
-                </div>
+                </StaggerItem>
               ))}
-            </div>
+            </StaggerGroup>
           </div>
 
         </div>
